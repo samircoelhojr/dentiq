@@ -93,7 +93,7 @@ export default function JogosPage() {
         </div>
       </nav>
 
-      <div className="max-w-6xl mx-auto px-6 py-12">
+      <div className="max-w-6xl mx-auto px-4 sm:px-6 py-8 sm:py-12">
         <h1 className="font-syne font-extrabold text-3xl mb-2">Escolha seu treino</h1>
         <p className="font-dm text-[#8a9e8a] text-sm mb-10">
           Filtre por matéria, assunto e dificuldade. Depois selecione o jogo.
@@ -104,7 +104,7 @@ export default function JogosPage() {
           <p className="font-syne font-semibold text-sm mb-5 text-[#8a9e8a] uppercase tracking-wider">
             Filtros
           </p>
-          <div className="grid sm:grid-cols-3 gap-5">
+          <div className="grid sm:grid-cols-3 gap-4 sm:gap-5">
             {/* Subject */}
             <div>
               <label className="block text-xs font-dm text-[#8a9e8a] mb-2">

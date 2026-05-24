@@ -127,7 +127,7 @@ function QuizGame() {
         </div>
       </nav>
 
-      <div className="flex-1 flex flex-col max-w-3xl w-full mx-auto px-6 py-10">
+      <div className="flex-1 flex flex-col max-w-3xl w-full mx-auto px-4 sm:px-6 py-6 sm:py-10">
         {/* Header row */}
         <div className="flex items-center justify-between mb-3">
           <div className="flex items-center gap-3">
@@ -318,7 +318,7 @@ function ResultScreen({ score, total, wrong, accuracy, onRetry, subject, topic, 
         </p>
 
         {/* Stats */}
-        <div className="grid grid-cols-4 gap-4 w-full max-w-md mb-10">
+        <div className="grid grid-cols-2 sm:grid-cols-4 gap-4 w-full max-w-md mb-10">
           {stats.map((s) => (
             <div
               key={s.label}

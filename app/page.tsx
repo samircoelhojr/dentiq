@@ -43,11 +43,11 @@ export default function Home() {
     <main className="min-h-screen bg-[#0a0f0a] text-[#e8f0e8]">
       {/* ── Nav ── */}
       <nav className="border-b border-[#1e2a1e] border-[0.5px]">
-        <div className="max-w-6xl mx-auto px-6 h-16 flex items-center justify-between">
-          <span className="font-syne font-extrabold text-2xl tracking-tight text-[#1D9E75]">
+        <div className="max-w-6xl mx-auto px-4 sm:px-6 h-14 sm:h-16 flex items-center justify-between gap-2">
+          <span className="font-syne font-extrabold text-2xl tracking-tight text-[#1D9E75] shrink-0">
             Dent<span className="text-[#e8f0e8]">IQ</span>
           </span>
-          <div className="flex items-center gap-3">
+          <div className="flex items-center gap-2 sm:gap-3 flex-wrap justify-end">
             <Link
               href="/cadastro"
               className="text-sm font-dm text-[#8a9e8a] hover:text-[#e8f0e8] transition-colors border border-[#1e2a1e] border-[0.5px] px-4 py-2 rounded-lg hover:border-[#1D9E75]"
@@ -65,7 +65,7 @@ export default function Home() {
       </nav>
 
       {/* ── Hero ── */}
-      <section className="max-w-6xl mx-auto px-6 pt-20 pb-20">
+      <section className="max-w-6xl mx-auto px-4 sm:px-6 pt-12 sm:pt-20 pb-12 sm:pb-20">
         <div className="grid lg:grid-cols-[1fr_420px] gap-12 items-center">
           {/* Left */}
           <div>
