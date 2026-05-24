@@ -1,20 +1,19 @@
 "use client";
 
 import Link from "next/link";
+import Nav from "../components/Nav";
 
 export default function CadastroPage() {
   return (
     <main className="min-h-screen bg-[#0a0f0a] text-[#e8f0e8] flex flex-col">
-      <nav className="border-b border-[#1e2a1e] border-[0.5px]">
-        <div className="max-w-6xl mx-auto px-6 h-16 flex items-center justify-between">
-          <Link href="/" className="font-syne font-extrabold text-2xl tracking-tight text-[#1D9E75]">
-            Dent<span className="text-[#e8f0e8]">IQ</span>
-          </Link>
+      <Nav
+        wide
+        right={
           <Link href="/jogos" className="text-sm font-dm text-[#8a9e8a] hover:text-[#e8f0e8] transition-colors">
             Entrar
           </Link>
-        </div>
-      </nav>
+        }
+      />
 
       <div className="flex-1 flex items-center justify-center px-6 py-16">
         <div className="w-full max-w-sm">

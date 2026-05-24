@@ -2,6 +2,7 @@
 
 import { useState } from "react";
 import Link from "next/link";
+import Nav from "../components/Nav";
 import { subjects, difficulties, getTopics, filterQuestions } from "@/data/questions";
 import type { Subject, Difficulty } from "@/data/questions";
 
@@ -79,19 +80,7 @@ export default function JogosPage() {
 
   return (
     <main className="min-h-screen bg-[#0a0f0a] text-[#e8f0e8]">
-      {/* Nav */}
-      <nav className="border-b border-[#1e2a1e] border-[0.5px]">
-        <div className="max-w-6xl mx-auto px-6 h-14 flex items-center gap-4">
-          <Link
-            href="/"
-            className="font-syne font-bold text-lg tracking-tight text-[#1D9E75]"
-          >
-            Dent<span className="text-[#e8f0e8]">IQ</span>
-          </Link>
-          <span className="text-[#1e2a1e] text-lg">/</span>
-          <span className="text-sm font-dm text-[#8a9e8a]">Jogos</span>
-        </div>
-      </nav>
+      <Nav wide breadcrumbs={[{ label: "Jogos" }]} />
 
       <div className="max-w-6xl mx-auto px-4 sm:px-6 py-8 sm:py-12">
         <h1 className="font-syne font-extrabold text-3xl mb-2">Escolha seu treino</h1>

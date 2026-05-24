@@ -3,6 +3,7 @@
 import { useState, useEffect, useCallback, Suspense } from "react";
 import { useSearchParams, useRouter } from "next/navigation";
 import Link from "next/link";
+import Nav from "../../components/Nav";
 import { filterQuestions, questions as allQuestions } from "@/data/questions";
 import type { Question, Subject, Difficulty } from "@/data/questions";
 
@@ -112,20 +113,7 @@ function QuizGame() {
 
   return (
     <main className="min-h-screen bg-[#0a0f0a] text-[#e8f0e8] flex flex-col">
-      {/* Nav */}
-      <nav className="border-b border-[#1e2a1e] border-[0.5px]">
-        <div className="max-w-3xl mx-auto px-6 h-14 flex items-center gap-4">
-          <Link href="/" className="font-syne font-extrabold text-2xl tracking-tight text-[#1D9E75]">
-            Dent<span className="text-[#e8f0e8]">IQ</span>
-          </Link>
-          <span className="text-[#1e2a1e] text-lg">/</span>
-          <Link href="/jogos" className="text-sm font-dm text-[#8a9e8a] hover:text-[#e8f0e8] transition-colors">
-            Jogos
-          </Link>
-          <span className="text-[#1e2a1e] text-lg">/</span>
-          <span className="text-sm font-dm text-[#8a9e8a]">Quiz</span>
-        </div>
-      </nav>
+      <Nav breadcrumbs={[{ label: "Jogos", href: "/jogos" }, { label: "Quiz" }]} />
 
       <div className="flex-1 flex flex-col max-w-3xl w-full mx-auto px-4 sm:px-6 py-6 sm:py-10">
         {/* Header row */}
@@ -300,15 +288,7 @@ function ResultScreen({ score, total, wrong, accuracy, onRetry, subject, topic, 
 
   return (
     <main className="min-h-screen bg-[#0a0f0a] text-[#e8f0e8] flex flex-col">
-      <nav className="border-b border-[#1e2a1e] border-[0.5px]">
-        <div className="max-w-3xl mx-auto px-6 h-14 flex items-center gap-4">
-          <Link href="/" className="font-syne font-bold text-lg tracking-tight text-[#1D9E75]">
-            Dent<span className="text-[#e8f0e8]">IQ</span>
-          </Link>
-          <span className="text-[#1e2a1e] text-lg">/</span>
-          <span className="text-sm font-dm text-[#8a9e8a]">Resultado</span>
-        </div>
-      </nav>
+      <Nav breadcrumbs={[{ label: "Resultado" }]} />
 
       <div className="max-w-3xl mx-auto px-6 py-16 flex-1 flex flex-col items-center justify-center text-center">
         <span className="text-5xl block mb-4 text-[#1D9E75]">{emoji}</span>

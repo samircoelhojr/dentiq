@@ -3,6 +3,7 @@
 import { useState } from "react";
 import Image from "next/image";
 import Link from "next/link";
+import Nav from "../../components/Nav";
 import { implantChallenge } from "@/data/dragdrop";
 
 type Phase = "playing" | "finished";
@@ -81,20 +82,7 @@ export default function DragDropPage() {
 
   return (
     <main className="min-h-screen bg-[#0a0f0a] text-[#e8f0e8]">
-      {/* Nav */}
-      <nav className="border-b border-[#1e2a1e] border-[0.5px]">
-        <div className="max-w-6xl mx-auto px-4 sm:px-6 h-14 flex items-center gap-3">
-          <Link href="/" className="font-syne font-extrabold text-xl tracking-tight text-[#1D9E75]">
-            Dent<span className="text-[#e8f0e8]">IQ</span>
-          </Link>
-          <span className="text-[#1e2a1e]">/</span>
-          <Link href="/jogos" className="text-sm font-dm text-[#8a9e8a] hover:text-[#e8f0e8] transition-colors">
-            Jogos
-          </Link>
-          <span className="text-[#1e2a1e]">/</span>
-          <span className="text-sm font-dm text-[#8a9e8a]">Drag & Drop</span>
-        </div>
-      </nav>
+      <Nav wide breadcrumbs={[{ label: "Jogos", href: "/jogos" }, { label: "Drag & Drop" }]} />
 
       <div className="max-w-5xl mx-auto px-4 sm:px-6 py-6 sm:py-10">
         <div className="mb-6">
@@ -259,15 +247,7 @@ function ResultScreen({
 
   return (
     <main className="min-h-screen bg-[#0a0f0a] text-[#e8f0e8]">
-      <nav className="border-b border-[#1e2a1e] border-[0.5px]">
-        <div className="max-w-3xl mx-auto px-4 sm:px-6 h-14 flex items-center gap-3">
-          <Link href="/" className="font-syne font-bold text-lg tracking-tight text-[#1D9E75]">
-            Dent<span className="text-[#e8f0e8]">IQ</span>
-          </Link>
-          <span className="text-[#1e2a1e]">/</span>
-          <span className="text-sm font-dm text-[#8a9e8a]">Resultado</span>
-        </div>
-      </nav>
+      <Nav breadcrumbs={[{ label: "Resultado" }]} />
 
       <div className="max-w-3xl mx-auto px-4 sm:px-6 py-12">
         <div className="text-center mb-8">
