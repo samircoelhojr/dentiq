@@ -1,0 +1,7 @@
+{
+  "permissions": {
+    "allow": [
+      "PowerShell(if \\(!\\(Test-Path \"c:\\\\MeusProjetos\\\\DentIQ\\\\.claude\"\\)\\) { New-Item -ItemType Directory -Path \"c:\\\\MeusProjetos\\\\DentIQ\\\\.claude\" | Out-Null }; Write-Output \"ok\")"
+    ]
+  }
+}
