@@ -1147,6 +1147,1164 @@ export const questions: Question[] = [
     explanation:
       "DVO é a medida vertical da face quando os dentes (ou próteses) estão em oclusão cêntrica. Difere da Dimensão Vertical de Repouso (DVR), que inclui o espaço livre interoclusal de 2–4 mm.",
   },
+
+  // ══════════════════════════════════════════════════════════════════════════
+  // PRÓTESE PARCIAL FIXA — BLOCO I: FUNDAMENTOS
+  // ══════════════════════════════════════════════════════════════════════════
+
+  // CAP. 1 — Introdução à PPF
+  {
+    id: "ppf-c1-01",
+    subject: "Prótese Parcial Fixa",
+    topic: "Introdução e Classificação",
+    difficulty: "Básico",
+    question: "Uma PPF com pôntico apoiado em apenas um pilar, sem suporte no lado oposto, é classificada como:",
+    options: ["PPF convencional de dois pilares", "PPF em cantiléver (extensão livre)", "PPF adesiva de Maryland", "Overdenture implanto-suportada"],
+    correctIndex: 1,
+    explanation: "A PPF em cantiléver tem o pôntico suportado por um único pilar, gerando forças de torção sobre ele. É indicada com cautela — principalmente para substituição do segundo pré-molar inferior — e exige pilar robusto.",
+  },
+  {
+    id: "ppf-c1-02",
+    subject: "Prótese Parcial Fixa",
+    topic: "Introdução e Classificação",
+    difficulty: "Básico",
+    question: "Qual a principal vantagem da PPF convencional sobre a prótese parcial removível (PPR)?",
+    options: [
+      "Menor custo de confecção",
+      "Não requer desgaste dos dentes pilares",
+      "Maior conforto, melhor função mastigatória e estética superior por ser fixa na boca",
+      "Pode ser instalada mesmo com doença periodontal ativa",
+    ],
+    correctIndex: 2,
+    explanation: "A PPF oferece maior conforto (não é removida pelo paciente), melhor transmissão das forças mastigatórias e estética mais natural. A desvantagem é o desgaste dos dentes pilares e o custo mais elevado em relação à PPR.",
+  },
+  {
+    id: "ppf-c1-03",
+    subject: "Prótese Parcial Fixa",
+    topic: "Terminologia",
+    difficulty: "Básico",
+    question: "Na terminologia da PPF, o 'conector' é definido como:",
+    options: [
+      "O elemento artificial que substitui o dente ausente",
+      "A porção que une o retentor ao pôntico, podendo ser rígido ou não-rígido",
+      "O cimento que une a coroa ao dente pilar",
+      "O componente de encaixe em próteses adesivas",
+    ],
+    correctIndex: 1,
+    explanation: "O conector é a junção entre o retentor (que cobre o pilar) e o pôntico. Conectores rígidos são os mais comuns; conectores não-rígidos (eixo macho-fêmea) são usados em situações específicas, como pilares com diferentes eixos de inserção.",
+  },
+
+  // CAP. 2 — Anatomia Dental Aplicada
+  {
+    id: "ppf-c2-01",
+    subject: "Prótese Parcial Fixa",
+    topic: "Anatomia e Perfil de Emergência",
+    difficulty: "Básico",
+    question: "O 'perfil de emergência' de uma coroa protética refere-se a:",
+    options: [
+      "O ângulo de convergência das paredes axiais do preparo",
+      "O contorno da restauração desde o término cervical até o ponto de contato proximal, imitando a anatomia natural",
+      "A espessura mínima de cerâmica na região vestibular",
+      "A curvatura da face oclusal em relação ao plano de Frankfurt",
+    ],
+    correctIndex: 1,
+    explanation: "O perfil de emergência descreve como a restauração 'emerge' do sulco gengival em direção ao ponto de contato. Um perfil correto suporta o tecido gengival, reproduz a convexidade natural e é fundamental para a saúde periodontal periprotética.",
+  },
+  {
+    id: "ppf-c2-02",
+    subject: "Prótese Parcial Fixa",
+    topic: "Anatomia e Perfil de Emergência",
+    difficulty: "Intermediário",
+    question: "A localização ideal do ponto de contato proximal em dentes posteriores é:",
+    options: [
+      "No terço cervical, próximo à gengiva",
+      "Na junção dos terços oclusal e médio, centralizado no sentido vestíbulo-lingual",
+      "No terço oclusal, na linha de ângulo vestibular",
+      "Dentes posteriores não devem ter contatos proximais em prótese",
+    ],
+    correctIndex: 1,
+    explanation: "Em dentes posteriores, o ponto de contato fica na junção do terço oclusal com o médio, centrado no sentido VL. Isso distribui forças adequadamente e mantém a papila gengival protegida no nicho abaixo do contato.",
+  },
+  {
+    id: "ppf-c2-03",
+    subject: "Prótese Parcial Fixa",
+    topic: "Anatomia e Perfil de Emergência",
+    difficulty: "Intermediário",
+    question: "A proporção coroa/raiz mínima geralmente aceita para seleção de um dente como pilar de PPF é:",
+    options: ["2:1 (coroa duas vezes maior que a raiz)", "1:1 (coroa igual ao comprimento radicular)", "1:2 (raiz duas vezes maior que a coroa)", "3:1 (coroa três vezes maior)"],
+    correctIndex: 1,
+    explanation: "A proporção mínima aceitável é 1:1. A ideal é 1:2 (raiz duas vezes maior). Proporções desfavoráveis aumentam o braço de alavanca coronário e o risco de sobrecarga radicular, especialmente em pilares de cantiléver.",
+  },
+
+  // CAP. 3 — Oclusão
+  {
+    id: "ppf-c3-01",
+    subject: "Prótese Parcial Fixa",
+    topic: "Oclusão em Prótese Fixa",
+    difficulty: "Básico",
+    question: "A Máxima Intercuspidação Habitual (MIH) representa:",
+    options: [
+      "A posição condilar mais posterior e superior na fossa articular",
+      "A posição de máximo contato dentário intercuspídeo, independente da posição condilar",
+      "O contato dentário durante a protrusão máxima",
+      "A posição de repouso mandibular sem contato dental",
+    ],
+    correctIndex: 1,
+    explanation: "A MIH (ou ICP — Intercuspal Position) é a posição de máximo contato dentário. Pode coincidir ou não com a Relação Cêntrica e é a referência principal para ajuste oclusal de PPF.",
+  },
+  {
+    id: "ppf-c3-02",
+    subject: "Prótese Parcial Fixa",
+    topic: "Oclusão em Prótese Fixa",
+    difficulty: "Intermediário",
+    question: "A guia anterior na oclusão tem como função principal:",
+    options: [
+      "Distribuir as forças mastigatórias igualmente entre todos os dentes",
+      "Desocluir os dentes posteriores durante os movimentos de protrusão e lateralidade, protegendo-os de forças horizontais",
+      "Aumentar a dimensão vertical de oclusão durante a função",
+      "Manter o selamento labial em repouso",
+    ],
+    correctIndex: 1,
+    explanation: "A guia anterior (incisivos) promove a desoclusão dos dentes posteriores nos movimentos excursivos, protegendo-os de forças não axiais. Reconstruir a guia adequada é fundamental em reabilitações anteriores com PPF.",
+  },
+  {
+    id: "ppf-c3-03",
+    subject: "Prótese Parcial Fixa",
+    topic: "Oclusão em Prótese Fixa",
+    difficulty: "Avançado",
+    question: "Na oclusão mutuamente protegida, os dentes posteriores protegem os anteriores em:",
+    options: [
+      "Movimentos de lateralidade e protrusão",
+      "Oclusão cêntrica (MIH), suportando a maior parte das forças verticais axiais",
+      "Durante a deglutição e contatos em repouso",
+      "Durante a mastigação unilateral exclusiva",
+    ],
+    correctIndex: 1,
+    explanation: "Na oclusão mutuamente protegida: os posteriores suportam as forças verticais em MIH (protegendo os anteriores de sobrecarga compressiva), enquanto os anteriores promovem a desoclusão posterior nos movimentos excursivos (protegendo os posteriores de forças horizontais).",
+  },
+
+  // CAP. 4 — Biomecânica
+  {
+    id: "ppf-c4-01",
+    subject: "Prótese Parcial Fixa",
+    topic: "Biomecânica",
+    difficulty: "Básico",
+    question: "A Lei de Ante em prótese parcial fixa estabelece que:",
+    options: [
+      "O conector deve ter resistência proporcional ao número de pônticos",
+      "A área de superfície radicular dos pilares deve ser igual ou maior que a dos dentes substituídos pelo pôntico",
+      "O comprimento do pôntico não deve exceder 1,5× o diâmetro do pilar",
+      "O eixo de inserção deve ser perpendicular ao plano oclusal",
+    ],
+    correctIndex: 1,
+    explanation: "A Lei de Ante (1926) preconiza que a soma das áreas radiculares dos pilares deve ser ≥ à dos dentes substituídos. É um princípio biomecânico clássico, complementado atualmente pela avaliação da qualidade óssea e do suporte periodontal.",
+  },
+  {
+    id: "ppf-c4-02",
+    subject: "Prótese Parcial Fixa",
+    topic: "Biomecânica",
+    difficulty: "Intermediário",
+    question: "O tipo de força mais prejudicial ao periodonto dos pilares de PPF é:",
+    options: [
+      "Força compressiva axial (vertical)",
+      "Força horizontal (cisalhamento e torção)",
+      "Força compressiva leve durante a mastigação",
+      "Força de tração leve durante a abertura bucal",
+    ],
+    correctIndex: 1,
+    explanation: "Forças horizontais (cisalhamento, torção, lateralidade) são as mais prejudiciais — o periodonto é menos resistente a forças não axiais. Forças axiais de compressão são melhor toleradas. O design da PPF deve minimizar forças torcionais sobre os pilares.",
+  },
+  {
+    id: "ppf-c4-03",
+    subject: "Prótese Parcial Fixa",
+    topic: "Biomecânica",
+    difficulty: "Avançado",
+    question: "Em uma PPF em cantiléver com pôntico distal, o pilar sofre principalmente:",
+    options: [
+      "Compressão axial pura",
+      "Momento de força (torque) com tendência a girar e extruir o pilar",
+      "Força de intrusão uniforme ao longo da raiz",
+      "Apenas forças laterais sem componente vertical",
+    ],
+    correctIndex: 1,
+    explanation: "O pôntico em cantiléver cria um momento de força no pilar, com tendência de rotação e extrusão. A força oclusal sobre o pôntico é amplificada pelo braço de alavanca. Por isso, cantiléver exige pilares robustos e extensão controlada.",
+  },
+
+  // ══════════════════════════════════════════════════════════════════════════
+  // BLOCO II — DIAGNÓSTICO E PLANEJAMENTO
+  // ══════════════════════════════════════════════════════════════════════════
+
+  // CAP. 5 — Exame Clínico
+  {
+    id: "ppf-c5-01",
+    subject: "Prótese Parcial Fixa",
+    topic: "Exame Clínico e Planejamento",
+    difficulty: "Básico",
+    question: "Qual parâmetro periodontal é indispensável antes de iniciar um tratamento de PPF?",
+    options: [
+      "Avaliação de sondagem completa (profundidade de bolsa, nível de inserção, mobilidade e sangramento)",
+      "Apenas avaliação visual da cor e forma gengival",
+      "Apenas verificação de placa visível",
+      "Avaliação radiográfica sem necessidade de sondagem",
+    ],
+    correctIndex: 0,
+    explanation: "Sondagem periodontal completa (6 pontos por dente) com registro de profundidade de bolsa, nível de inserção clínica, mobilidade e sangramento são obrigatórios antes de qualquer PPF. Doença periodontal ativa é contraindicação ao início da reabilitação.",
+  },
+  {
+    id: "ppf-c5-02",
+    subject: "Prótese Parcial Fixa",
+    topic: "Exame Clínico e Planejamento",
+    difficulty: "Intermediário",
+    question: "A linha do sorriso ideal expõe:",
+    options: [
+      "Apenas os dentes inferiores durante o sorriso forçado",
+      "Os dentes superiores com exposição gengival de 0–2 mm e borda incisal acompanhando a curvatura do lábio inferior",
+      "Os dentes superiores totalmente cobertos pelo lábio superior",
+      "Exposição gengival superior a 4 mm (sorriso gengival)",
+    ],
+    correctIndex: 1,
+    explanation: "A linha do sorriso ideal expõe 0–2 mm de gengiva e tem a borda incisal dos superiores acompanhando a curvatura do lábio inferior. Isso guia decisões sobre comprimento e posição das coroas anteriores na PPF.",
+  },
+
+  // CAP. 6 — Exames Complementares
+  {
+    id: "ppf-c6-01",
+    subject: "Prótese Parcial Fixa",
+    topic: "Exame Clínico e Planejamento",
+    difficulty: "Básico",
+    question: "O enceramento diagnóstico (wax-up) é realizado para:",
+    options: [
+      "Determinar a cor final da cerâmica",
+      "Visualizar previamente o resultado estético e funcional, guiando preparos, provisórios e comunicação com o laboratório",
+      "Verificar a vitalidade pulpar dos pilares",
+      "Realizar a sondagem periodontal em modelos de gesso",
+    ],
+    correctIndex: 1,
+    explanation: "O wax-up reproduz em cera o resultado final sobre os modelos de estudo. Serve como guia para os preparos, confecção de provisórios (matriz de silicone) e comunicação com o laboratório e com o paciente antes de qualquer intervenção irreversível.",
+  },
+  {
+    id: "ppf-c6-02",
+    subject: "Prótese Parcial Fixa",
+    topic: "Exame Clínico e Planejamento",
+    difficulty: "Intermediário",
+    question: "A montagem dos modelos em articulador semi-ajustável (ASA) com arco facial é necessária porque:",
+    options: [
+      "Reduz o custo do tratamento ao eliminar ajustes clínicos",
+      "Reproduz a relação dos modelos com o eixo de dobradiça terminal do paciente, simulando movimentos mandibulares e melhorando a precisão oclusal",
+      "Permite verificar a cor das cerâmicas antes da queima",
+      "É obrigatória apenas para próteses sobre implantes",
+    ],
+    correctIndex: 1,
+    explanation: "O arco facial transfere a posição maxilar em relação ao eixo condilar. Montados no ASA, os modelos simulam os movimentos mandibulares do paciente, possibilitando confeccionar próteses com oclusão mais precisa e reduzir os ajustes em boca.",
+  },
+
+  // CAP. 7 — Seleção de Pilares
+  {
+    id: "ppf-c7-01",
+    subject: "Prótese Parcial Fixa",
+    topic: "Seleção de Pilares",
+    difficulty: "Básico",
+    question: "Um dente com tratamento endodôntico bem realizado e sem lesão periapical pode ser pilar de PPF desde que:",
+    options: [
+      "Nunca — dentes tratados endodonticamente são contraindicados como pilares",
+      "Possua remanescente coronário suficiente, efeito férula adequado e restauração coronal de qualidade",
+      "Seja apenas dente anterior, pois os posteriores são sempre extraídos",
+      "O canal seja retratado antes da instalação da prótese",
+    ],
+    correctIndex: 1,
+    explanation: "Dentes tratados endodonticamente podem ser excelentes pilares quando há efeito férula (≥ 2 mm de dentina sã além do núcleo), remanescente radicular adequado, ausência de lesão ativa e restauração coronal correta. O prognóstico equipara-se ao de dentes vitais bem manejados.",
+  },
+  {
+    id: "ppf-c7-02",
+    subject: "Prótese Parcial Fixa",
+    topic: "Seleção de Pilares",
+    difficulty: "Avançado",
+    question: "Quando um possível pilar apresenta perda de inserção periodontal de 30–40%, a decisão de mantê-lo considera:",
+    options: [
+      "Sempre extrair e usar implante",
+      "O prognóstico pós-tratamento periodontal, a área radicular remanescente útil, a distribuição dos demais pilares e a conformidade do paciente ao controle de placa",
+      "Apenas o aspecto radiográfico",
+      "Substituir por PPR em todos os casos",
+    ],
+    correctIndex: 1,
+    explanation: "A decisão sobre pilares periodontalmente comprometidos é multifatorial. Após terapia periodontal, reavalia-se o prognóstico. Pilares com até 50% de suporte podem ser úteis se bem distribuídos. A conformidade do paciente à manutenção periódica é fator determinante.",
+  },
+
+  // CAP. 8 — Plano de Tratamento Integrado
+  {
+    id: "ppf-c8-01",
+    subject: "Prótese Parcial Fixa",
+    topic: "Exame Clínico e Planejamento",
+    difficulty: "Básico",
+    question: "A sequência correta de fases no plano de tratamento para PPF é:",
+    options: [
+      "Reabilitação → controle de doença → urgência → manutenção",
+      "Urgência → controle de doença ativa → reabilitação → manutenção",
+      "Reabilitação → urgência → manutenção → controle",
+      "Controle → urgência → manutenção → reabilitação",
+    ],
+    correctIndex: 1,
+    explanation: "A sequência clássica é: urgência (eliminar dor/infecção) → controle de doença (periodontal, cárie, endodontia) → reabilitação (PPF, implantes) → manutenção periódica. Instalar prótese sobre doença ativa compromete o prognóstico.",
+  },
+  {
+    id: "ppf-c8-02",
+    subject: "Prótese Parcial Fixa",
+    topic: "Exame Clínico e Planejamento",
+    difficulty: "Intermediário",
+    question: "A cirurgia de aumento de coroa clínica antes da PPF é indicada quando:",
+    options: [
+      "O dente apresenta cárie supragengival extensa",
+      "O término do preparo ou margem da futura restauração invade o espaço biológico (< 3 mm entre margem e crista óssea)",
+      "O dente apresenta mobilidade grau I",
+      "O paciente apresenta biotipo gengival espessado",
+    ],
+    correctIndex: 1,
+    explanation: "O espaço biológico (epitélio juncional + fibras supracrestais ≈ 2 mm) exige ao menos 3 mm entre crista óssea e término da restauração. Quando invadido, o aumento de coroa clínica (osteotomia + osteoplastia) é necessário para evitar inflamação gengival crônica periprotética.",
+  },
+
+  // ══════════════════════════════════════════════════════════════════════════
+  // BLOCO III — PREPAROS DENTÁRIOS
+  // ══════════════════════════════════════════════════════════════════════════
+
+  // CAP. 9 — Princípios Gerais de Preparo
+  {
+    id: "ppf-c9-01",
+    subject: "Prótese Parcial Fixa",
+    topic: "Princípios de Preparo",
+    difficulty: "Básico",
+    question: "Qual princípio de preparo dental é considerado o mais crítico para a longevidade da restauração?",
+    options: [
+      "Estética (forma e cor da restauração)",
+      "Integridade marginal — adaptação precisa da restauração ao término do preparo",
+      "Número máximo de superfícies preparadas",
+      "Profundidade máxima de desgaste para retenção",
+    ],
+    correctIndex: 1,
+    explanation: "A integridade marginal é o princípio mais crítico: margem desadaptada permite microinfiltração, cárie secundária, inflamação periodontal e falha prematura da restauração. Todos os demais princípios são secundários se a margem for inadequada.",
+  },
+  {
+    id: "ppf-c9-02",
+    subject: "Prótese Parcial Fixa",
+    topic: "Princípios de Preparo",
+    difficulty: "Intermediário",
+    question: "O TOC (Total Occlusal Convergence) ideal para retenção de coroas totais está na faixa de:",
+    options: ["0–5°", "10–20°", "25–35°", "40–60°"],
+    correctIndex: 1,
+    explanation: "O TOC ideal é 10–20° (ângulo total entre as paredes opostas), sendo 12–16° o mais citado. Abaixo de 10° dificulta a remoção da restauração. Acima de 20–25° reduz significativamente a retenção e a resistência ao deslocamento.",
+  },
+  {
+    id: "ppf-c9-03",
+    subject: "Prótese Parcial Fixa",
+    topic: "Princípios de Preparo",
+    difficulty: "Avançado",
+    question: "'Retenção' e 'estabilidade' em preparos dentários são conceitos distintos. Estabilidade refere-se a:",
+    options: [
+      "A força necessária para remover a restauração no sentido axial",
+      "A resistência da restauração a forças oblíquas e horizontais que tentam tombá-la ou girá-la",
+      "A rugosidade superficial das paredes axiais do preparo",
+      "O comprimento mínimo das paredes axiais do preparo",
+    ],
+    correctIndex: 1,
+    explanation: "Retenção resiste ao deslocamento axial (remoção). Estabilidade resiste a forças laterais e oblíquas que tentam tombar ou girar a coroa. Ambas dependem da altura, convergência e geometria do preparo, mas são aumentadas por fatores diferentes.",
+  },
+
+  // CAP. 10 — Términos Cervicais
+  {
+    id: "ppf-c10-01",
+    subject: "Prótese Parcial Fixa",
+    topic: "Términos Cervicais",
+    difficulty: "Básico",
+    question: "O término cervical mais indicado para coroas totalmente cerâmicas (zircônia ou dissilicato de lítio) é:",
+    options: [
+      "Lâmina de faca (knife edge)",
+      "Chanfro suave (chamfer) ou ombro arredondado",
+      "Ombro reto a 90° sem arredondamento interno",
+      "Bisel extenso a 45°",
+    ],
+    correctIndex: 1,
+    explanation: "Cerâmicas totais exigem chanfro ou ombro arredondado — fornece espaço suficiente (≥ 1–1,5 mm) e elimina ângulos vivos que concentram tensões e causam fratura. A lâmina de faca é contraindicada por não fornecer espaço adequado para a cerâmica.",
+  },
+  {
+    id: "ppf-c10-02",
+    subject: "Prótese Parcial Fixa",
+    topic: "Términos Cervicais",
+    difficulty: "Intermediário",
+    question: "O espaço biológico periodontal corresponde à soma de:",
+    options: [
+      "Profundidade de sondagem + recessão gengival",
+      "Epitélio juncional (~1 mm) + fibras do tecido conjuntivo supracrestal (~1 mm) ≈ 2 mm",
+      "Sulco gengival + epitélio juncional apenas",
+      "Crista óssea + lâmina dura apenas",
+    ],
+    correctIndex: 1,
+    explanation: "O espaço biológico (Gargiulo, 1961) = epitélio juncional (~0,97 mm) + fibras supracrestais (~1,07 mm) ≈ 2 mm. Somando o sulco gengival (~1 mm), precisamos de ≥ 3 mm entre crista óssea e margem da restauração. Invasão causa inflamação gengival crônica irreversível.",
+  },
+  {
+    id: "ppf-c10-03",
+    subject: "Prótese Parcial Fixa",
+    topic: "Términos Cervicais",
+    difficulty: "Intermediário",
+    question: "O término intrassulcular (subgengival) é indicado principalmente quando:",
+    options: [
+      "Em todos os casos para melhorar a estética",
+      "Há coroa clínica curta necessitando de mais retenção, margem anterior a esconder por razão estética, ou restauração de lesão subgengival",
+      "Apenas em dentes anteriores com biotipo fino",
+      "Nunca — todos os términos devem ser supragengivais",
+    ],
+    correctIndex: 1,
+    explanation: "O término subgengival é indicado seletivamente: coroa clínica curta (necessidade de retenção extra), estética anterior (esconder margem), ou lesão/fratura subgengival. Aumenta o risco periodontal se mal executado e dificulta a moldagem.",
+  },
+
+  // CAP. 11 — Coroas Totais Metálicas
+  {
+    id: "ppf-c11-01",
+    subject: "Prótese Parcial Fixa",
+    topic: "Preparos para Coroas Metálicas",
+    difficulty: "Básico",
+    question: "Para uma coroa total metálica em região posterior, a redução oclusal mínima recomendada é de:",
+    options: ["0,5 mm em toda a face", "1,0–1,5 mm nas cúspides funcionais e ≥ 1,0 mm nas não-funcionais", "2,5–3,0 mm em toda a face oclusal", "3,0 mm para garantir resistência suficiente"],
+    correctIndex: 1,
+    explanation: "Coroas metálicas requerem menos espaço que as cerâmicas: 1,0–1,5 mm nas cúspides funcionais e ≥ 1,0 mm nas não funcionais. Esse espaço garante resistência mecânica do metal sem fragilizar excessivamente o preparo.",
+  },
+
+  // CAP. 12 — Coroas Metalocerâmicas
+  {
+    id: "ppf-c12-01",
+    subject: "Prótese Parcial Fixa",
+    topic: "Preparos para Metalocerâmica",
+    difficulty: "Básico",
+    question: "Para uma coroa metalocerâmica em dente anterior, a redução vestibular mínima é de:",
+    options: ["0,5 mm", "1,0 mm", "1,5–2,0 mm", "3,0 mm"],
+    correctIndex: 2,
+    explanation: "A metalocerâmica exige 1,5–2,0 mm vestibular para acomodar infraestrutura metálica (0,3–0,5 mm) + cerâmica de recobrimento (1,0–1,5 mm). Espaço insuficiente leva a cerâmica sobrecontornada ou infraestrutura comprometida.",
+  },
+  {
+    id: "ppf-c12-02",
+    subject: "Prótese Parcial Fixa",
+    topic: "Preparos para Metalocerâmica",
+    difficulty: "Intermediário",
+    question: "A junção metal-cerâmica (linha de transição) em uma coroa metalocerâmica anterior deve ser localizada:",
+    options: [
+      "No terço oclusal vestibular, visível durante o sorriso",
+      "Na margem cervical, junto ao término do preparo",
+      "Em área não visível durante o sorriso — lingual ou dentro do sulco proximal",
+      "Na face proximal, no centro vestíbulo-lingual",
+    ],
+    correctIndex: 2,
+    explanation: "A junção metal-cerâmica deve ficar fora da zona de sorriso para não comprometer a estética. Na região anterior, situa-se no terço lingual; o término vestibular é em ombro (para a cerâmica) e o lingual pode ser chanfro (apenas metal).",
+  },
+
+  // CAP. 13 — Coroas Totalmente Cerâmicas
+  {
+    id: "ppf-c13-01",
+    subject: "Prótese Parcial Fixa",
+    topic: "Preparos para Cerâmicas Totais",
+    difficulty: "Básico",
+    question: "Qual a espessura mínima recomendada de dissilicato de lítio (IPS e.max) para coroa monolítica posterior?",
+    options: ["0,3–0,5 mm", "1,0–1,5 mm", "2,5 mm", "3,0 mm"],
+    correctIndex: 1,
+    explanation: "O dissilicato de lítio monolítico posterior exige ≥ 1,0–1,5 mm oclusal. Sua alta resistência à flexão (~400 MPa) permite menor redução que cerâmicas convencionais, mas ainda requer preparo adequado para evitar fratura.",
+  },
+  {
+    id: "ppf-c13-02",
+    subject: "Prótese Parcial Fixa",
+    topic: "Preparos para Cerâmicas Totais",
+    difficulty: "Intermediário",
+    question: "A principal vantagem da zircônia monolítica sobre a estratificada (com cerâmica de recobrimento) é:",
+    options: [
+      "Melhor translucidez e estética superior em todos os casos",
+      "Eliminação do risco de lascamento (chipping) da cerâmica de recobrimento, complicação mais frequente em restaurações estratificadas",
+      "Menor custo de fabricação",
+      "Melhor adesão ao dente por cimentação convencional",
+    ],
+    correctIndex: 1,
+    explanation: "O chipping (lascamento) da cerâmica de recobrimento é a complicação mecânica mais comum em coroas estratificadas. A zircônia monolítica elimina esse risco ao não ter recobrimento cerâmico. A limitação é a menor translucidez nas versões mais opacas.",
+  },
+  {
+    id: "ppf-c13-03",
+    subject: "Prótese Parcial Fixa",
+    topic: "Preparos para Cerâmicas Totais",
+    difficulty: "Avançado",
+    question: "O preparo para coroa de dissilicato de lítio difere do preparo para zircônia monolítica principalmente porque:",
+    options: [
+      "A zircônia exige maior redução oclusal que o dissilicato",
+      "O dissilicato exige ângulos internos rigorosamente arredondados; a zircônia, com resistência muito maior, tolera melhor ângulos mais definidos",
+      "O dissilicato não aceita término em chanfro, apenas em ombro reto",
+      "A zircônia exige término obrigatoriamente subgengival",
+    ],
+    correctIndex: 1,
+    explanation: "O dissilicato de lítio é mais sensível à concentração de tensões e exige ângulos internos cuidadosamente arredondados. A zircônia (resistência 900–1200 MPa) tolera melhor ângulos mais vivos. Ambas exigem chanfro ou ombro arredondado, mas o dissilicato requer mais cuidado com os detalhes internos.",
+  },
+
+  // CAP. 14 — Núcleos e Pinos
+  {
+    id: "ppf-c14-01",
+    subject: "Prótese Parcial Fixa",
+    topic: "Núcleos e Retentores Intrarradiculares",
+    difficulty: "Básico",
+    question: "O 'efeito férula' em dentes tratados endodonticamente refere-se a:",
+    options: [
+      "O efeito estético produzido pela coroa sobre dente tratado",
+      "A faixa circunferencial de dentina sã (≥ 2 mm) acima do término do núcleo, abraçada pela coroa, que distribui forças e protege a raiz de fratura",
+      "O uso de pino de fibra de vidro em vez de núcleo metálico fundido",
+      "A proteção do selamento apical pelo núcleo de preenchimento",
+    ],
+    correctIndex: 1,
+    explanation: "O efeito férula (≥ 2 mm de dentina circunferencial acima do término do núcleo, abraçada pela coroa) é o fator mais importante contra fratura radicular em dentes tratados endodonticamente. Sem férula, o risco de fratura radicular vertical é muito elevado.",
+  },
+  {
+    id: "ppf-c14-02",
+    subject: "Prótese Parcial Fixa",
+    topic: "Núcleos e Retentores Intrarradiculares",
+    difficulty: "Intermediário",
+    question: "A principal vantagem dos pinos de fibra de vidro sobre os metálicos é:",
+    options: [
+      "Maior resistência à fratura do pino",
+      "Módulo de elasticidade semelhante à dentina, redistribuindo forças de forma mais homogênea e reduzindo o risco de fratura radicular catastrófica",
+      "Maior retenção no canal radicular",
+      "Menor custo de aquisição e instalação",
+    ],
+    correctIndex: 1,
+    explanation: "Pinos de fibra de vidro (~40 GPa) têm módulo de elasticidade próximo ao da dentina (~18 GPa), ao contrário dos metálicos (~200 GPa). Isso homogeneíza a distribuição de tensões e, em caso de falha, favorece fratura do pino (restaurável) em vez de fratura radicular vertical (irrestaurável).",
+  },
+
+  // CAP. 15 — Próteses Adesivas
+  {
+    id: "ppf-c15-01",
+    subject: "Prótese Parcial Fixa",
+    topic: "Próteses Adesivas",
+    difficulty: "Básico",
+    question: "A prótese fixa adesiva (Maryland bridge) é indicada principalmente em:",
+    options: [
+      "Substituição de molares em pacientes com bruxismo severo",
+      "Substituição de dentes anteriores com pilares hígidos ou pouco restaurados, especialmente em jovens",
+      "Pacientes com doença periodontal avançada generalizada",
+      "Substituição de múltiplos dentes simultaneamente em toda a arcada",
+    ],
+    correctIndex: 1,
+    explanation: "A PPF adesiva é ideal para substituir dentes anteriores com pilares hígidos, especialmente em jovens (aguardando maturidade para implante), em pacientes que recusam preparos convencionais ou como provisório de longa duração.",
+  },
+  {
+    id: "ppf-c15-02",
+    subject: "Prótese Parcial Fixa",
+    topic: "Próteses Adesivas",
+    difficulty: "Intermediário",
+    question: "Próteses adesivas de zircônia apresentam melhores resultados que as de metal porque:",
+    options: [
+      "A zircônia permite maior redução dos dentes pilares",
+      "Com primer MDP-based, a zircônia apresenta adesão química estável e menores taxas de descolamento que o metal",
+      "A zircônia é mais barata e mais fácil de processar",
+      "O metal das próteses de Maryland é incompatível com resinas contemporâneas",
+    ],
+    correctIndex: 1,
+    explanation: "Próteses adesivas de zircônia tratadas com primer MDP (10-metacriloxidecil dihidrogenofosfato) mostram taxas de sucesso >90% em 5 anos, superando as metálicas. O MDP cria ligação química estável com a zircônia, sem necessidade de condicionamento com ácido fluorídrico.",
+  },
+
+  // CAP. 16 — Facetas Laminadas
+  {
+    id: "ppf-c16-01",
+    subject: "Prótese Parcial Fixa",
+    topic: "Facetas Laminadas",
+    difficulty: "Básico",
+    question: "O preparo tipo 'janela' (window) para faceta laminada se caracteriza por:",
+    options: [
+      "Término na face palatina, incluindo o bordo incisal",
+      "Preservação do bordo incisal original — o término fica na face vestibular antes do ângulo incisal",
+      "Redução intensa da face palatina para projeção vestibular",
+      "Extensão até toda a largura da face palatina",
+    ],
+    correctIndex: 1,
+    explanation: "O preparo tipo janela preserva o bordo incisal (sem reduzi-lo), com término circunferencial na face vestibular. É o mais conservador, indicado quando o bordo incisal original é esteticamente aceitável e não há necessidade de aumento de comprimento.",
+  },
+  {
+    id: "ppf-c16-02",
+    subject: "Prótese Parcial Fixa",
+    topic: "Facetas Laminadas",
+    difficulty: "Intermediário",
+    question: "A espessura mínima de cerâmica feldspática para facetas laminadas é de:",
+    options: ["0,1–0,2 mm", "0,3–0,5 mm", "1,5–2,0 mm", "2,5–3,0 mm"],
+    correctIndex: 1,
+    explanation: "Facetas feldspáticas requerem mínimo 0,3–0,5 mm para resistência adequada e estética satisfatória. O preparo correspondente remove esmalte de forma mínima. O dissilicato de lítio pode ser usado em espessuras de 0,3 mm em facetas ultrafinas.",
+  },
+
+  // ══════════════════════════════════════════════════════════════════════════
+  // BLOCO IV — MOLDAGEM E PROVISÓRIOS
+  // ══════════════════════════════════════════════════════════════════════════
+
+  // CAP. 17 — Afastamento Gengival
+  {
+    id: "ppf-c17-01",
+    subject: "Prótese Parcial Fixa",
+    topic: "Moldagem e Afastamento Gengival",
+    difficulty: "Básico",
+    question: "O afastamento gengival antes da moldagem em PPF tem como objetivo principal:",
+    options: [
+      "Anestesiar o sulco gengival para maior conforto do paciente",
+      "Expor o término cervical do preparo para que o material de moldagem capture a margem com precisão",
+      "Eliminar a inflamação gengival antes da impressão",
+      "Avaliar a profundidade de sondagem em tempo real",
+    ],
+    correctIndex: 1,
+    explanation: "O afastamento expõe a margem do preparo, cria espaço para o material de moldagem fluir além do término e registrá-lo com precisão. Sem afastamento, a margem pode ficar encoberta pelo tecido gengival, comprometendo a adaptação da peça.",
+  },
+  {
+    id: "ppf-c17-02",
+    subject: "Prótese Parcial Fixa",
+    topic: "Moldagem e Afastamento Gengival",
+    difficulty: "Intermediário",
+    question: "Qual solução hemostática é contraindicada em pacientes com hipertensão grave ou doença cardiovascular não controlada?",
+    options: ["Cloreto de alumínio a 25%", "Sulfato de zinco", "Epinefrina (adrenalina) em cordas impregnadas", "Sulfato férrico a 15%"],
+    correctIndex: 2,
+    explanation: "A epinefrina das cordas retratoras é absorvida sistemicamente pelo sulco gengival e pode elevar a pressão arterial e a frequência cardíaca. É contraindicada em hipertensão grave, arritmias ou cardiopatia não controlada. Opta-se por cloreto de alumínio ou sulfato férrico nesses casos.",
+  },
+
+  // CAP. 18 — Materiais de Moldagem
+  {
+    id: "ppf-c18-01",
+    subject: "Prótese Parcial Fixa",
+    topic: "Materiais de Moldagem",
+    difficulty: "Básico",
+    question: "O silicone de adição (polivinilsiloxano — PVS) é o material de moldagem de maior precisão porque:",
+    options: [
+      "É o material mais barato disponível",
+      "Apresenta mínima contração de polimerização, excelente estabilidade dimensional e permite múltiplos vazamentos",
+      "É o único material compatível com moldeira estoque",
+      "Não requer tempo de espera após a presa",
+    ],
+    correctIndex: 1,
+    explanation: "O PVS (polimerização por adição) não libera subprodutos, resultando em contração < 0,15%. Sua estabilidade dimensional superior permite vazar o modelo horas ou dias depois e revazá-lo múltiplas vezes com precisão mantida.",
+  },
+  {
+    id: "ppf-c18-02",
+    subject: "Prótese Parcial Fixa",
+    topic: "Materiais de Moldagem",
+    difficulty: "Intermediário",
+    question: "O escaneamento intraoral (moldagem digital) apresenta como principal limitação em relação ao silicone de adição:",
+    options: [
+      "Maior custo operacional em todos os cenários",
+      "Dificuldade de capturar margens profundamente subgengivais com a mesma precisão do silicone",
+      "Impossibilidade de integração com sistemas CAD/CAM",
+      "Maior tempo clínico para realização",
+    ],
+    correctIndex: 1,
+    explanation: "O escaneamento intraoral tem dificuldade em capturar com precisão margens muito subgengivais (onde o sulco limita a visibilidade ótica). Para margens supragengivais ou levemente subgengivais, a precisão é comparável ao silicone. A principal vantagem é o conforto do paciente e a integração digital.",
+  },
+
+  // CAP. 19 — Técnicas de Moldagem
+  {
+    id: "ppf-c19-01",
+    subject: "Prótese Parcial Fixa",
+    topic: "Técnicas de Moldagem",
+    difficulty: "Intermediário",
+    question: "Na técnica de moldagem em dois tempos (two-step) com silicone, a segunda etapa com material leve serve para:",
+    options: [
+      "Registrar apenas os contatos oclusais",
+      "Capturar os detalhes finos do preparo e término cervical, aproveitando o espaço criado pela primeira moldagem com silicone pesado",
+      "Fixar a moldeira ao arco dental",
+      "Criar espaço para o cimento na restauração definitiva",
+    ],
+    correctIndex: 1,
+    explanation: "No two-step, o silicone pesado faz a moldagem inicial. Após presa, remove-se material do sulco e áreas críticas. O silicone leve, de alta fluidez, é injetado e a moldeira reposicionada — capturando todos os detalhes finos do preparo que o pesado não atingiu.",
+  },
+
+  // CAP. 20 — Restaurações Provisórias
+  {
+    id: "ppf-c20-01",
+    subject: "Prótese Parcial Fixa",
+    topic: "Restaurações Provisórias",
+    difficulty: "Básico",
+    question: "Qual função dos provisórios de PPF é considerada mais importante do ponto de vista biológico?",
+    options: [
+      "Função estética — manter a aparência durante o tratamento",
+      "Proteção pulpar e periodontal — isolar o preparo e manter saúde gengival",
+      "Manutenção do espaço intermaxilar para o laboratório",
+      "Estabilização da ATM durante a confecção do definitivo",
+    ],
+    correctIndex: 1,
+    explanation: "A proteção biológica é primária: o provisório protege a polpa de variações térmicas, químicas e bacterianas, e mantém a saúde gengival com contornos e acabamento adequados. A função e estética também são importantes, mas a proteção biológica é a base.",
+  },
+  {
+    id: "ppf-c20-02",
+    subject: "Prótese Parcial Fixa",
+    topic: "Restaurações Provisórias",
+    difficulty: "Intermediário",
+    question: "A confecção indireta de provisórios (laboratório) é preferida à direta quando:",
+    options: [
+      "O paciente tem apenas um dente a ser restaurado",
+      "Os casos envolvem reabilitações extensas, mudança de DVO ou casos estéticos complexos que exigem máxima qualidade",
+      "O material de escolha é a resina bis-acrílica",
+      "Há necessidade de provisório imediato na mesma sessão",
+    ],
+    correctIndex: 1,
+    explanation: "A técnica indireta oferece melhor controle de oclusão, contornos e estética, pois é confeccionada sobre modelos articulados no laboratório. É preferida em reabilitações extensas e mudanças de DVO. A técnica direta é mais rápida e adequada para casos unitários simples.",
+  },
+
+  // ══════════════════════════════════════════════════════════════════════════
+  // BLOCO V — MATERIAIS E LABORATÓRIO
+  // ══════════════════════════════════════════════════════════════════════════
+
+  // CAP. 21 — Ligas Metálicas
+  {
+    id: "ppf-c21-01",
+    subject: "Prótese Parcial Fixa",
+    topic: "Ligas Metálicas e Cerâmicas",
+    difficulty: "Básico",
+    question: "As ligas metálicas são classificadas como 'alto nobre' quando:",
+    options: [
+      "Contêm mais de 60% de cromo e cobalto",
+      "Apresentam ≥ 60% de metais preciosos, incluindo ≥ 40% de ouro em peso",
+      "São fabricadas exclusivamente por fresagem CAD/CAM",
+      "Apresentam alto módulo de elasticidade (> 200 GPa)",
+    ],
+    correctIndex: 1,
+    explanation: "A ADA classifica: Alto nobre (≥ 60% metais preciosos + ≥ 40% ouro); Nobre (≥ 25% metais preciosos); Não-nobre (< 25%). A nobreza correlaciona-se com biocompatibilidade e resistência à corrosão.",
+  },
+
+  // CAP. 22 — Cerâmicas
+  {
+    id: "ppf-c22-01",
+    subject: "Prótese Parcial Fixa",
+    topic: "Ligas Metálicas e Cerâmicas",
+    difficulty: "Básico",
+    question: "O dissilicato de lítio (IPS e.max) é indicado como material de excelência para coroas unitárias porque:",
+    options: [
+      "Tem resistência à flexão similar ao esmalte (~60 MPa)",
+      "Combina alta resistência (~400 MPa), excelente estética/translucidez e cimentação adesiva com silano após condicionamento com HF",
+      "É o mais barato entre as cerâmicas para CAD/CAM",
+      "É o único material indicado para PPF de múltiplos elementos",
+    ],
+    correctIndex: 1,
+    explanation: "O dissilicato de lítio (~400 MPa) equilibra resistência mecânica e estética. É indicado para unitárias anteriores e posteriores e pontes até pré-molares. A cimentação adesiva (HF + silano + cimento resinoso) cria vínculo de alta resistência.",
+  },
+  {
+    id: "ppf-c22-02",
+    subject: "Prótese Parcial Fixa",
+    topic: "Ligas Metálicas e Cerâmicas",
+    difficulty: "Intermediário",
+    question: "A zircônia tetragonal (Y-TZP) tem como principal propriedade mecânica:",
+    options: [
+      "Alta translucidez comparável ao esmalte natural",
+      "Altíssima resistência à flexão (900–1200 MPa), sendo a cerâmica mais resistente disponível clinicamente",
+      "Condicionamento com ácido fluorídrico para adesão convencional",
+      "Módulo de elasticidade inferior ao do dissilicato de lítio",
+    ],
+    correctIndex: 1,
+    explanation: "A Y-TZP tem resistência à flexão 900–1200 MPa, a mais alta entre as cerâmicas odontológicas, permitindo uso em PPF de múltiplos elementos e regiões de alta carga. As novas zircônias de alta translucidez (5Y-TZP) oferecem 500–700 MPa com melhor estética.",
+  },
+
+  // CAP. 23 — CAD/CAM
+  {
+    id: "ppf-c23-01",
+    subject: "Prótese Parcial Fixa",
+    topic: "CAD/CAM e Fluxo Digital",
+    difficulty: "Básico",
+    question: "No contexto da prótese dentária, CAD/CAM refere-se a:",
+    options: [
+      "Cálculo Automático de Dentes / Cerâmica Artesanal Moldada",
+      "Computer-Aided Design / Computer-Aided Manufacturing — design e fabricação (fresagem/impressão 3D) assistidos por computador",
+      "Cerâmica de Alta Dureza / Cerâmica de Alta Moldabilidade",
+      "Cimentação Adesiva Direta / Cimentação Adesiva com Mediação",
+    ],
+    correctIndex: 1,
+    explanation: "CAD/CAM integra design digital (software 3D) e fabricação automatizada (fresagem de blocos ou impressão 3D), permitindo maior precisão, reprodutibilidade e integração com o escaneamento intraoral.",
+  },
+  {
+    id: "ppf-c23-02",
+    subject: "Prótese Parcial Fixa",
+    topic: "CAD/CAM e Fluxo Digital",
+    difficulty: "Intermediário",
+    question: "No fluxo digital chair-side (CAD/CAM na clínica), o dentista pode:",
+    options: [
+      "Apenas solicitar o escaneamento; a fresagem é sempre realizada no laboratório",
+      "Escanear o preparo, desenhar e fresar a restauração na clínica em uma única sessão",
+      "Usar apenas blocos de resina composta para fresagem",
+      "Fresar apenas metalocerâmicas; cerâmicas puras requerem forno de laboratório",
+    ],
+    correctIndex: 1,
+    explanation: "Sistemas chair-side (CEREC, Planmeca) permitem escanear, projetar e fresar a restauração em 1–2 horas na própria clínica, usando blocos cerâmicos ou de resina. O custo do equipamento e a curva de aprendizado são as principais limitações.",
+  },
+
+  // CAP. 24 — Comunicação com Laboratório
+  {
+    id: "ppf-c24-01",
+    subject: "Prótese Parcial Fixa",
+    topic: "Comunicação com Laboratório",
+    difficulty: "Básico",
+    question: "A condição de iluminação mais adequada para seleção de cor de uma cerâmica é:",
+    options: [
+      "Luz halógena do refletor odontológico diretamente sobre os dentes",
+      "Luz natural difusa (dia sem sol direto) ou luz clínica padronizada D65, no início da consulta com olhos descansados",
+      "Luz fluorescente do teto da sala clínica",
+      "Qualquer iluminação, desde que a escala Vita seja usada",
+    ],
+    correctIndex: 1,
+    explanation: "A seleção de cor deve ser feita sob luz do dia difusa (D65) no início da consulta, com os dentes hidratados, antes do isolamento. Luz artificial incandescente distorce a percepção cromática, podendo levar a escolhas incorretas.",
+  },
+
+  // ══════════════════════════════════════════════════════════════════════════
+  // BLOCO VI — CIMENTAÇÃO E INSTALAÇÃO
+  // ══════════════════════════════════════════════════════════════════════════
+
+  // CAP. 25 — Prova da Peça
+  {
+    id: "ppf-c25-01",
+    subject: "Prótese Parcial Fixa",
+    topic: "Cimentação e Instalação",
+    difficulty: "Básico",
+    question: "Durante a prova da peça protética, qual é o primeiro parâmetro a ser avaliado?",
+    options: [
+      "Cor da cerâmica em relação aos dentes adjacentes",
+      "Adaptação marginal — verificar a ausência de gap ou pressão excessiva nas margens",
+      "Oclusão em MIH e movimentos excursivos",
+      "Contatos proximais e ponto de contato",
+    ],
+    correctIndex: 1,
+    explanation: "A adaptação marginal é avaliada primeiro, pois é a base de tudo: margem desadaptada compromete hermeticidade, retenção e saúde periodontal. Utiliza-se sonda exploradora e pressão digital para detectar gaps ou margens abertas antes de ajustar oclusão e contatos.",
+  },
+
+  // CAP. 26 — Cimentos
+  {
+    id: "ppf-c26-01",
+    subject: "Prótese Parcial Fixa",
+    topic: "Cimentação e Instalação",
+    difficulty: "Básico",
+    question: "O cimento de fosfato de zinco ainda é utilizado em prótese fixa porque:",
+    options: [
+      "É biocompatível com a polpa sem necessidade de proteção adicional",
+      "Apresenta excelente resistência compressiva, baixo custo e longa comprovação clínica para próteses com boa retenção mecânica",
+      "É o único compatível com infraestruturas de zircônia",
+      "Não requer controle de umidade durante a cimentação",
+    ],
+    correctIndex: 1,
+    explanation: "O fosfato de zinco tem limitações (pH inicial baixo, irritante pulpar, sem adesão química), mas mantém indicação em coroas com boa retenção mecânica preparada. Seu baixo custo, longa história clínica e facilidade de remoção de excessos são vantagens práticas.",
+  },
+  {
+    id: "ppf-c26-02",
+    subject: "Prótese Parcial Fixa",
+    topic: "Cimentação e Instalação",
+    difficulty: "Intermediário",
+    question: "Os cimentos resinosos são obrigatórios na cimentação de coroas de cerâmica pura (feldspática ou dissilicato de lítio) porque:",
+    options: [
+      "São os únicos aprovados pela ANVISA para cerâmicas",
+      "A adesão ao dente distribui as cargas e reforça a cerâmica, aumentando significativamente a resistência à fratura",
+      "Endurecem mais rapidamente que os convencionais",
+      "São compatíveis com qualquer preparo, dispensando tratamento de superfície",
+    ],
+    correctIndex: 1,
+    explanation: "Cerâmicas feldspáticas e dissilicato têm resistência à flexão moderada. A cimentação adesiva (HF + silano + cimento resinoso) cria complexo restauração-cimento-dente que distribui tensões, aumenta a resistência à fratura e melhora a retenção.",
+  },
+  {
+    id: "ppf-c26-03",
+    subject: "Prótese Parcial Fixa",
+    topic: "Cimentação e Instalação",
+    difficulty: "Avançado",
+    question: "Os cimentos resinosos autoadesivos (ex.: RelyX U200) apresentam como limitação em relação aos com sistema adesivo separado:",
+    options: [
+      "Menor resistência compressiva inicial",
+      "Adesão inferior ao esmalte e dentina, pois o pH autolimitante não promove desmineralização e infiltração tão profunda quanto o sistema adesivo convencional",
+      "Incompatibilidade com cerâmicas feldspáticas",
+      "Necessidade obrigatória de isolamento absoluto em todos os casos",
+    ],
+    correctIndex: 1,
+    explanation: "Cimentos autoadesivos desmineralizam e infiltram a dentina em um único passo, mas o pH aumenta rapidamente (autolimitante), resultando em menor profundidade de penetração que sistemas convencionais separados. A adesão dentinária resultante é inferior; são mais indicados para casos com boa retenção mecânica.",
+  },
+
+  // CAP. 27 — Protocolos de Cimentação
+  {
+    id: "ppf-c27-01",
+    subject: "Prótese Parcial Fixa",
+    topic: "Cimentação e Instalação",
+    difficulty: "Intermediário",
+    question: "O condicionamento com ácido fluorídrico (HF) da superfície interna das cerâmicas feldspáticas e do dissilicato de lítio cria:",
+    options: [
+      "Camada protetora contra corrosão pelo cimento",
+      "Microporosidades pela dissolução seletiva da fase vítrea, aumentando a área de superfície para ancoragem micromecânica do silano e cimento",
+      "Reação química direta com os monômeros resinosos",
+      "Apenas limpeza da superfície, sem alteração topográfica",
+    ],
+    correctIndex: 1,
+    explanation: "O HF (4–10%) dissolve seletivamente a fase vítrea da cerâmica, criando microporosidades que aumentam a área de superfície para ancoragem micromecânica do silano e do cimento resinoso. É o primeiro passo obrigatório no protocolo de cimentação adesiva de cerâmicas silicosas.",
+  },
+  {
+    id: "ppf-c27-02",
+    subject: "Prótese Parcial Fixa",
+    topic: "Cimentação e Instalação",
+    difficulty: "Avançado",
+    question: "Por que a zircônia NÃO deve ser condicionada com ácido fluorídrico antes da cimentação?",
+    options: [
+      "O HF não é suficientemente forte para atacar a zircônia",
+      "A zircônia é policristalina sem fase vítrea — o HF é ineficaz. O protocolo correto usa jateamento com Al₂O₃ + primer MDP-based",
+      "O HF dissolve completamente a zircônia em poucos segundos",
+      "O HF é incompatível apenas com zircônia colorida",
+    ],
+    correctIndex: 1,
+    explanation: "A zircônia policristalina não tem fase vítrea — o HF não cria microporosidades. O protocolo correto é: jateamento com Al₂O₃ (50 μm) para limpeza e rugosidade + primer MDP-based (ex.: Monobond Plus, Z-Prime Plus) para ligação química estável, seguido de cimento resinoso.",
+  },
+
+  // CAP. 28 — Ajustes Pós-Cimentação
+  {
+    id: "ppf-c28-01",
+    subject: "Prótese Parcial Fixa",
+    topic: "Cimentação e Instalação",
+    difficulty: "Intermediário",
+    question: "Após ajuste oclusal de cerâmica com ponta diamantada, o procedimento obrigatório é:",
+    options: [
+      "Reaplicação de silano para restaurar a adesão",
+      "Polimento com borrachas específicas para cerâmica ou requeima no forno (glazeamento), pois a superfície áspera acelera o desgaste do antagonista",
+      "Aplicação de resina fotopolimerizável sobre a área ajustada",
+      "Nenhum procedimento — cerâmica não requer polimento pós-ajuste",
+    ],
+    correctIndex: 1,
+    explanation: "A superfície cerâmica ajustada fica rugosa, aumentando o desgaste do antagonista e a aderência bacteriana. Polimento com borrachas abrasivas (granulação decrescente) ou glazeamento no forno restaura a lisura. O glazeamento é mais eficaz mas exige envio ao laboratório.",
+  },
+
+  // ══════════════════════════════════════════════════════════════════════════
+  // BLOCO VII — COMPLICAÇÕES E MANUTENÇÃO
+  // ══════════════════════════════════════════════════════════════════════════
+
+  // CAP. 29 — Complicações Biológicas
+  {
+    id: "ppf-c29-01",
+    subject: "Prótese Parcial Fixa",
+    topic: "Complicações Biológicas",
+    difficulty: "Básico",
+    question: "A sensibilidade dentinária intensa e progressiva após o preparo para PPF pode indicar:",
+    options: [
+      "Fratura radicular do pilar",
+      "Pulpite irreversível por trauma térmico-mecânico excessivo, podendo requerer endodontia antes da instalação do definitivo",
+      "Necessidade imediata de remoção do provisório",
+      "Falha apenas na cimentação do provisório",
+    ],
+    correctIndex: 1,
+    explanation: "Sensibilidade leve é esperada pós-preparo. Porém, dor espontânea, intensa e progressiva indica pulpite irreversível — o tratamento endodôntico é necessário antes da instalação da coroa definitiva. O provisório bem-adaptado e dessensibilizantes previnem na maioria dos casos.",
+  },
+  {
+    id: "ppf-c29-02",
+    subject: "Prótese Parcial Fixa",
+    topic: "Complicações Biológicas",
+    difficulty: "Intermediário",
+    question: "A cárie secundária em PPF ocorre predominantemente em qual região?",
+    options: [
+      "Face oclusal, sob o metal",
+      "Margem cervical — especialmente quando há desadaptação da margem ou higiene inadequada",
+      "Face lingual, por acúmulo de tártaro",
+      "Face vestibular, por ação de fluidos ácidos",
+    ],
+    correctIndex: 1,
+    explanation: "Cáries secundárias ocorrem predominantemente na margem cervical, onde a adaptação é mais crítica e o biofilme se acumula. Margens desadaptadas, término supragengival em pacientes de alto risco e higiene inadequada são os principais fatores. Radiografias periódicas são essenciais para detecção precoce.",
+  },
+
+  // CAP. 30 — Complicações Mecânicas
+  {
+    id: "ppf-c30-01",
+    subject: "Prótese Parcial Fixa",
+    topic: "Complicações Mecânicas",
+    difficulty: "Básico",
+    question: "O 'chipping' (lascamento) de cerâmica em coroas metalocerâmicas é causado principalmente por:",
+    options: [
+      "Excesso de cerâmica em áreas de baixa carga oclusal",
+      "Diferença de coeficiente de expansão térmica metal-cerâmica, defeitos na cocção, contatos prematuros ou espessura insuficiente de cerâmica",
+      "Uso de cimento resinoso em vez de fosfato de zinco",
+      "Excesso de retenção mecânica no preparo",
+    ],
+    correctIndex: 1,
+    explanation: "O chipping é multifatorial: incompatibilidade de expansão térmica (tensões residuais), defeitos de queima (porosidades, resfriamento rápido), contatos oclusais prematuros ou laterais, espessura inadequada de cerâmica e suporte insuficiente da infraestrutura. Bruxismo é agravante importante.",
+  },
+  {
+    id: "ppf-c30-02",
+    subject: "Prótese Parcial Fixa",
+    topic: "Complicações Mecânicas",
+    difficulty: "Intermediário",
+    question: "A descimentação recorrente de uma coroa indica primariamente:",
+    options: [
+      "Cimento de má qualidade ou armazenamento inadequado",
+      "Preparo inadequado (curto, muito expulsivo ou liso) ou falha no protocolo de cimentação (contaminação, técnica incorreta)",
+      "Biocompatibilidade inadequada do material da coroa",
+      "Excesso de forças verticais durante a mastigação normal",
+    ],
+    correctIndex: 1,
+    explanation: "A descimentação recorrente quase sempre resulta de preparo inadequado (insuficientemente retentivo, muito expulsivo, liso) ou falha no protocolo (contaminação salivar, manipulação incorreta). A solução é reanalisar e reconfeccionar o preparo, não apenas recrutar com novo cimento.",
+  },
+
+  // CAP. 31 — Complicações Estéticas
+  {
+    id: "ppf-c31-01",
+    subject: "Prótese Parcial Fixa",
+    topic: "Complicações Estéticas",
+    difficulty: "Básico",
+    question: "A linha cervical escura (sombra metálica) em coroas metalocerâmicas é causada principalmente por:",
+    options: [
+      "Uso de liga de ouro de alta nobreza",
+      "Recessão gengival pós-instalação expondo a margem metálica que estava subgengival",
+      "Pigmentação bacteriana na superfície da cerâmica",
+      "Oxidação da cerâmica pela saliva ao longo do tempo",
+    ],
+    correctIndex: 1,
+    explanation: "A exposição da margem metálica ocorre principalmente por recessão gengival progressiva (por doença periodontal ou invasão do espaço biológico). Pode ser prevenida usando coroas totalmente cerâmicas ou metalocerâmicas com término totalmente em cerâmica.",
+  },
+  {
+    id: "ppf-c31-02",
+    subject: "Prótese Parcial Fixa",
+    topic: "Complicações Estéticas",
+    difficulty: "Intermediário",
+    question: "Os 'triângulos pretos' (black triangles) após instalação de PPF anterior são causados por:",
+    options: [
+      "Pigmentação da cerâmica por bebidas escuras",
+      "Ausência ou retração da papila interdental, decorrente de perda óssea interproximal ou ponto de contato muito alto/apical",
+      "Excesso de material de cimentação no espaço interdental",
+      "Incompatibilidade de cor entre a cerâmica e os dentes adjacentes",
+    ],
+    correctIndex: 1,
+    explanation: "Black triangles resultam da ausência de papila interproximal, causada por perda óssea interproximal, ponto de contato muito apical ou perfil de emergência inadequado. O planejamento antecipado (nível ósseo, posição do ponto de contato) é fundamental para prevenir essa complicação estética difícil de corrigir.",
+  },
+
+  // CAP. 32 — Manutenção
+  {
+    id: "ppf-c32-01",
+    subject: "Prótese Parcial Fixa",
+    topic: "Manutenção e Longevidade",
+    difficulty: "Básico",
+    question: "Qual instrumento é indispensável para higiene da área de pôntico de uma PPF?",
+    options: [
+      "Escova dental convencional",
+      "Superfloss ou passa-fio (threader) com fio dental, para higienizar sob o pôntico e nos conectores",
+      "Irrigador oral como único recurso",
+      "Escovas interdentais exclusivamente",
+    ],
+    correctIndex: 1,
+    explanation: "O fio dental convencional não consegue passar sob o pôntico. O superfloss (com segmento esponjoso) ou passa-fio permitem inserir o fio sob o pôntico, higienizando a face gengival e os conectores. Escovas interdentais complementam, mas o superfloss/passa-fio é indispensável.",
+  },
+  {
+    id: "ppf-c32-02",
+    subject: "Prótese Parcial Fixa",
+    topic: "Manutenção e Longevidade",
+    difficulty: "Intermediário",
+    question: "Qual a taxa de sobrevivência aproximada de PPF convencionais em 10 anos, conforme as principais revisões sistemáticas?",
+    options: ["50–60%", "70–75%", "89–93%", "99–100%"],
+    correctIndex: 2,
+    explanation: "Revisões sistemáticas (Pjetursson et al.) mostram sobrevivência de ~89–93% em 10 anos para PPF convencionais. As causas de falha mais frequentes são descimentação, fratura de cerâmica (chipping), cárie secundária e comprometimento endodôntico dos pilares.",
+  },
+
+  // ══════════════════════════════════════════════════════════════════════════
+  // BLOCO VIII — TÓPICOS AVANÇADOS
+  // ══════════════════════════════════════════════════════════════════════════
+
+  // CAP. 33 — Cantiléver
+  {
+    id: "ppf-c33-01",
+    subject: "Prótese Parcial Fixa",
+    topic: "PPF em Cantiléver",
+    difficulty: "Básico",
+    question: "A PPF em cantiléver é mais frequentemente indicada para substituir qual elemento?",
+    options: [
+      "Primeiro molar superior",
+      "Segundo pré-molar inferior (com primeiro molar como pilar) ou incisivo lateral superior",
+      "Incisivo central superior",
+      "Segundo molar inferior",
+    ],
+    correctIndex: 1,
+    explanation: "O cantiléver com melhores resultados documentados substitui o segundo pré-molar inferior ou o incisivo lateral superior, com pilar no dente adjacente. Evita-se em região de molares pela magnitude das forças mastigatórias e pela maior extensão do braço de alavanca.",
+  },
+
+  // CAP. 34 — Próteses Adesivas (avançado)
+  {
+    id: "ppf-c34-01",
+    subject: "Prótese Parcial Fixa",
+    topic: "Próteses Adesivas",
+    difficulty: "Avançado",
+    question: "As próteses adesivas de Maryland metálicas apresentam maior taxa de descimentação que as de zircônia porque:",
+    options: [
+      "O metal tem maior coeficiente de expansão térmica",
+      "A adesão ao metal é predominantemente micromecânica, enquanto a zircônia com primer MDP permite ligação química estável e mais duradoura",
+      "A zircônia é mais leve e exerce menor torque na adesão",
+      "O metal é incompatível com a dentina do pilar",
+    ],
+    correctIndex: 1,
+    explanation: "Na prótese de Maryland metálica, a adesão é micromecânica (jateamento, tratamento eletrolítico). Com zircônia + primer MDP-based, ocorre ligação química fosfato-zircônia altamente estável. Estudos mostram sobrevivência da zircônia adesiva > 90% em 5 anos, superando as metálicas.",
+  },
+
+  // CAP. 35 — Reabilitação Estética
+  {
+    id: "ppf-c35-01",
+    subject: "Prótese Parcial Fixa",
+    topic: "Reabilitação Estética Complexa",
+    difficulty: "Intermediário",
+    question: "O Digital Smile Design (DSD) é uma ferramenta que permite:",
+    options: [
+      "Fresar coroas de cerâmica diretamente na clínica",
+      "Planejar digitalmente a estética do sorriso usando fotografias e vídeos do paciente, antes de qualquer intervenção, e comunicar o resultado ao laboratório e ao paciente",
+      "Calcular automaticamente a cor ideal da cerâmica por espectrofotometria",
+      "Substituir o enceramento diagnóstico em todos os casos",
+    ],
+    correctIndex: 1,
+    explanation: "O DSD sobrepõe linhas de referência às fotografias do paciente, visualizando o resultado antes do tratamento. Facilita a comunicação paciente-dentista-técnico, auxilia no enceramento diagnóstico e serve como base para o mock-up clínico.",
+  },
+
+  // CAP. 36 — PPF em Pacientes Periodontais
+  {
+    id: "ppf-c36-01",
+    subject: "Prótese Parcial Fixa",
+    topic: "PPF e Periodontia",
+    difficulty: "Intermediário",
+    question: "A ferulização (splinting) de dentes com mobilidade aumentada por meio de PPF tem como objetivo:",
+    options: [
+      "Eliminar definitivamente a mobilidade de todos os dentes comprometidos",
+      "Distribuir as forças mastigatórias entre múltiplos dentes periodontalmente comprometidos, reduzindo a sobrecarga individual",
+      "Substituir o tratamento periodontal ativo",
+      "Aumentar a estética pela eliminação de diastemas",
+    ],
+    correctIndex: 1,
+    explanation: "A ferulização conecta dentes de mobilidade aumentada em uma unidade funcional, distribuindo cargas. Não elimina a doença nem substitui o tratamento periodontal — é complementar. Só é indicada após controle da inflamação e em dentes com prognóstico controlável.",
+  },
+
+  // CAP. 37 — Interface com Implantodontia
+  {
+    id: "ppf-c37-01",
+    subject: "Prótese Parcial Fixa",
+    topic: "PPF vs Implantes",
+    difficulty: "Intermediário",
+    question: "A principal diferença biomecânica entre dente natural e implante que impacta o planejamento protético é:",
+    options: [
+      "O implante tem maior resistência à força vertical que o dente natural",
+      "O dente tem ligamento periodontal (mobilidade fisiológica e propriocepção); o implante é anquilosado, rígido e com propriocepção reduzida",
+      "O implante suporta melhor forças laterais que o dente natural",
+      "Não há diferença biomecânica relevante para o planejamento",
+    ],
+    correctIndex: 1,
+    explanation: "O ligamento periodontal do dente amortece forças e fornece propriocepção fina. O implante osseointegrado é anquilosado — sem amortecimento, forças são transmitidas diretamente ao osso. Isso influencia o design oclusal e contraindica conexão rígida dente-implante em muitos casos.",
+  },
+  {
+    id: "ppf-c37-02",
+    subject: "Prótese Parcial Fixa",
+    topic: "PPF vs Implantes",
+    difficulty: "Avançado",
+    question: "A conexão rígida entre dente natural e implante em prótese mista é controversa porque:",
+    options: [
+      "O implante e o dente têm metais de diferentes cores",
+      "O dente tem deslocamento axial fisiológico (~0,1–0,3 mm); o implante não. Em conexão rígida, isso pode gerar forças cíclicas intrusivas no dente e extrusivas no implante",
+      "O cimento não adere igualmente ao dente e ao implante",
+      "A zircônia não pode ser usada em próteses mistas",
+    ],
+    correctIndex: 1,
+    explanation: "O deslocamento axial do dente (ligamento periodontal) versus a rigidez do implante criam comportamento diferencial sob carga. Em conexão rígida, isso gera forças cíclicas que podem causar intrusão do dente e sobrecarga no implante. Por isso muitos autores preferem conexão não-rígida ou evitam a associação.",
+  },
+
+  // CAP. 38 — Evidência Científica
+  {
+    id: "ppf-c38-01",
+    subject: "Prótese Parcial Fixa",
+    topic: "Evidência Científica",
+    difficulty: "Intermediário",
+    question: "Comparando PPF convencional e implante para substituição de dente unitário, a evidência atual demonstra:",
+    options: [
+      "A PPF tem taxa de sobrevivência superior ao implante em todos os períodos",
+      "Implantes unitários têm sobrevivência > 95% em 10 anos (similar ou superior à PPF), sem necessidade de desgaste dos dentes adjacentes",
+      "Não há diferença estatisticamente significativa entre os tratamentos",
+      "O implante é contraindicado para substituição de dentes anteriores",
+    ],
+    correctIndex: 1,
+    explanation: "Revisões sistemáticas (Jung et al., Pjetursson et al.) mostram sobrevivência de implantes unitários > 95% em 10 anos, comparável ou superior às PPF (~89–93%). A ausência de desgaste dos dentes adjacentes é vantagem crucial do implante, tornando-o a primeira escolha quando bem indicado.",
+  },
 ];
 
 // ── Helpers ───────────────────────────────────────────────────────────────

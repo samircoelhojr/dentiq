@@ -69,19 +69,19 @@ export default function Home() {
         <div className="grid lg:grid-cols-[1fr_420px] gap-12 items-center">
           {/* Left */}
           <div>
-            <div className="inline-flex items-center gap-2 border border-[#1e2a1e] border-[0.5px] rounded-full px-3 py-1 mb-8">
+            <div className="inline-flex items-center gap-2 border border-[#1e2a1e] border-[0.5px] rounded-full px-3 py-1 mb-5 sm:mb-8">
               <span className="w-1.5 h-1.5 rounded-full bg-[#1D9E75] inline-block" />
               <span className="text-xs font-dm text-[#8a9e8a] tracking-wide">
                 Plataforma educacional · Odontologia
               </span>
             </div>
 
-            <h1 className="font-syne font-extrabold text-5xl sm:text-6xl leading-[1.08] tracking-tight mb-6">
+            <h1 className="font-syne font-extrabold text-4xl sm:text-5xl lg:text-6xl leading-[1.1] tracking-tight mb-4 sm:mb-6">
               Aprenda odontologia{" "}
-              <span className="text-[#1D9E75] whitespace-nowrap">jogando.</span>
+              <span className="text-[#1D9E75]">jogando.</span>
             </h1>
 
-            <p className="font-dm text-[#8a9e8a] text-lg leading-relaxed max-w-lg mb-10">
+            <p className="font-dm text-[#8a9e8a] text-base sm:text-lg leading-relaxed max-w-lg mb-7 sm:mb-10">
               Quizzes, drag &amp; drop e casos clínicos para você fixar
               Implantodontia, Prótese, Periodontia e mais — na dificuldade
               certa, na hora que precisar.
@@ -161,7 +161,7 @@ export default function Home() {
       <div className="border-t border-[#1e2a1e] border-[0.5px]" />
 
       {/* ── Features ── */}
-      <section className="max-w-6xl mx-auto px-6 py-20">
+      <section className="max-w-6xl mx-auto px-4 sm:px-6 py-12 sm:py-20">
         <h2 className="font-syne font-bold text-2xl mb-12 text-[#e8f0e8]">
           Como funciona
         </h2>
@@ -183,8 +183,8 @@ export default function Home() {
 
       {/* ── Subjects ── */}
       <section className="border-t border-[#1e2a1e] border-[0.5px]">
-        <div className="max-w-6xl mx-auto px-6 py-20">
-          <h2 className="font-syne font-bold text-2xl mb-10 text-[#e8f0e8]">
+        <div className="max-w-6xl mx-auto px-4 sm:px-6 py-12 sm:py-20">
+          <h2 className="font-syne font-bold text-2xl mb-6 sm:mb-10 text-[#e8f0e8]">
             Matérias disponíveis
           </h2>
           <div className="flex flex-wrap gap-3">
@@ -202,8 +202,8 @@ export default function Home() {
 
       {/* ── CTA ── */}
       <section className="border-t border-[#1e2a1e] border-[0.5px]">
-        <div className="max-w-6xl mx-auto px-6 py-20">
-          <div className="border border-[#1e2a1e] border-[0.5px] rounded-2xl bg-[#111611] p-10 flex flex-col sm:flex-row sm:items-center justify-between gap-6">
+        <div className="max-w-6xl mx-auto px-4 sm:px-6 py-12 sm:py-20">
+          <div className="border border-[#1e2a1e] border-[0.5px] rounded-2xl bg-[#111611] p-6 sm:p-10 flex flex-col sm:flex-row sm:items-center justify-between gap-6">
             <div>
               <h2 className="font-syne font-bold text-2xl mb-2">
                 Pronto para começar?
@@ -224,7 +224,7 @@ export default function Home() {
 
       {/* ── Footer ── */}
       <footer className="border-t border-[#1e2a1e] border-[0.5px]">
-        <div className="max-w-6xl mx-auto px-6 py-6 flex items-center justify-between text-xs font-dm text-[#4a5a4a]">
+        <div className="max-w-6xl mx-auto px-4 sm:px-6 py-6 flex items-center justify-between text-xs font-dm text-[#4a5a4a]">
           <span>
             <span className="text-[#1D9E75] font-syne font-bold">DentIQ</span>{" "}
             · Plataforma educacional de odontologia
