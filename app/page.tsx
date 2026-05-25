@@ -2,6 +2,7 @@
 
 import Link from "next/link";
 import Nav from "./components/Nav";
+import { questions } from "@/data/questions";
 
 const features = [
   {
@@ -143,7 +144,7 @@ export default function Home() {
               ))}
               <div className="mt-2 pt-4 border-t border-[#1e2a1e] border-[0.5px] flex items-center justify-between">
                 <div>
-                  <p className="font-syne font-bold text-2xl text-[#e8f0e8]">70</p>
+                  <p className="font-syne font-bold text-2xl text-[#e8f0e8]">{questions.length}</p>
                   <p className="text-xs font-dm text-[#4a5a4a]">questões disponíveis</p>
                 </div>
                 <div className="text-right">
@@ -194,6 +195,53 @@ export default function Home() {
               >
                 {s}
               </span>
+            ))}
+          </div>
+        </div>
+      </section>
+
+      {/* ── Reviews ── */}
+      <section className="border-t border-[#1e2a1e] border-[0.5px]">
+        <div className="max-w-6xl mx-auto px-4 sm:px-6 py-12 sm:py-20">
+          <div className="flex items-center gap-3 mb-10">
+            <h2 className="font-syne font-bold text-2xl text-[#e8f0e8]">
+              O que dizem os estudantes
+            </h2>
+            <span className="text-xs font-dm text-[#4a5a4a] border border-[#1e2a1e] border-[0.5px] rounded-full px-2 py-0.5">
+              Beta
+            </span>
+          </div>
+          <div className="grid sm:grid-cols-3 gap-4">
+            {[
+              {
+                quote: "Finalmente entendi osseointegração de verdade. As explicações após cada questão fazem toda a diferença.",
+                name: "Ana Clara M.",
+                role: "6° período · UFMG",
+              },
+              {
+                quote: "Uso antes das provas para revisar Prótese. A interface é limpa e não distrai — foco total no conteúdo.",
+                name: "Rafael S.",
+                role: "8° período · USP",
+              },
+              {
+                quote: "Melhor forma de estudar no ônibus. Rápido, objetivo e com feedback imediato em cada questão.",
+                name: "Bianca T.",
+                role: "5° período · PUC-PR",
+              },
+            ].map((r) => (
+              <div
+                key={r.name}
+                className="border border-[#1e2a1e] border-[0.5px] rounded-xl bg-[#111611] p-6 flex flex-col gap-5"
+              >
+                <span className="text-[#1D9E75] font-syne font-bold text-3xl leading-none">"</span>
+                <p className="font-dm text-[#8a9e8a] text-sm leading-relaxed -mt-2">
+                  {r.quote}
+                </p>
+                <div className="mt-auto pt-4 border-t border-[#1e2a1e] border-[0.5px]">
+                  <p className="font-syne font-bold text-sm text-[#e8f0e8]">{r.name}</p>
+                  <p className="font-dm text-xs text-[#4a5a4a]">{r.role}</p>
+                </div>
+              </div>
             ))}
           </div>
         </div>
