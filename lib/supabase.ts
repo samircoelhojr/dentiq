@@ -20,5 +20,6 @@ export interface Profile {
   semester: number | null;
   course: string | null;
   how_heard: string;
+  avatar_url: string | null;
   created_at: string;
 }

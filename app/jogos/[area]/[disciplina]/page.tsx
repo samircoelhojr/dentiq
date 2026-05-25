@@ -1,14 +1,12 @@
 "use client";
 
-import { useState } from "react";
+import { useState, useEffect } from "react";
 import Link from "next/link";
 import { useParams } from "next/navigation";
 import Nav from "../../../components/Nav";
 import { getArea, getDisciplina } from "@/data/areas";
 import { getTopics, filterQuestions, difficulties } from "@/data/questions";
 import type { Subject, Difficulty } from "@/data/questions";
-
-const COUNT_OPTIONS = [5, 10, 15, 20];
 
 const gameModes = [
   {
@@ -47,6 +45,22 @@ export default function DisciplinaPage() {
   const [selectedDifficulty, setSelectedDifficulty] = useState<Difficulty | "Todas">("Todas");
   const [questionCount, setQuestionCount] = useState(10);
 
+  // Compute derived values before early returns (safe with optional chaining)
+  const subject = disciplina?.subject as Subject | undefined;
+  const topics = subject ? getTopics(subject) : [];
+  const matchCount = subject
+    ? filterQuestions({
+        subject,
+        topic: selectedTopic !== "Todos" ? selectedTopic : undefined,
+        difficulty: selectedDifficulty !== "Todas" ? selectedDifficulty : undefined,
+      }).length
+    : 0;
+
+  // Clamp slider when filters reduce available questions
+  useEffect(() => {
+    setQuestionCount((prev) => (matchCount > 0 ? Math.min(prev, matchCount) : prev));
+  }, [matchCount]);
+
   if (!area || !disciplina) {
     return (
       <main className="min-h-screen bg-[#0a0f0a] text-[#e8f0e8] flex items-center justify-center">
@@ -55,7 +69,6 @@ export default function DisciplinaPage() {
     );
   }
 
-  // Discipline without questions yet
   if (!disciplina.subject) {
     return (
       <main className="min-h-screen bg-[#0a0f0a] text-[#e8f0e8]">
@@ -90,25 +103,16 @@ export default function DisciplinaPage() {
     );
   }
 
-  const subject = disciplina.subject as Subject;
-  const topics = getTopics(subject);
-
-  const matchCount = filterQuestions({
-    subject,
-    topic: selectedTopic !== "Todos" ? selectedTopic : undefined,
-    difficulty: selectedDifficulty !== "Todas" ? selectedDifficulty : undefined,
-  }).length;
-
-  const effectiveCount = Math.min(questionCount, matchCount);
-
   function buildQuizHref() {
     const params = new URLSearchParams();
-    params.set("subject", subject);
+    params.set("subject", subject!);
     if (selectedTopic !== "Todos") params.set("topic", selectedTopic);
     if (selectedDifficulty !== "Todas") params.set("difficulty", selectedDifficulty);
     params.set("count", String(questionCount));
     return `/jogos/quiz?${params.toString()}`;
   }
+
+  const sliderMax = Math.max(1, matchCount);
 
   return (
     <main className="min-h-screen bg-[#0a0f0a] text-[#e8f0e8]">
@@ -125,14 +129,14 @@ export default function DisciplinaPage() {
         <h1 className="font-syne font-extrabold text-3xl mb-1">{disciplina.label}</h1>
         <p className="font-dm text-[#8a9e8a] text-sm mb-10">{area.label}</p>
 
-        {/* ── Assunto / Filtros ── */}
+        {/* ── Filtros ── */}
         <div className="border border-[#1e2a1e] border-[0.5px] rounded-xl bg-[#111611] p-6 mb-8">
           <p className="font-syne font-semibold text-xs text-[#8a9e8a] uppercase tracking-wider mb-5">
             Filtrar questões
           </p>
 
-          <div className="grid sm:grid-cols-3 gap-4 sm:gap-5">
-            {/* Topic / Assunto */}
+          <div className="grid sm:grid-cols-2 gap-4 sm:gap-5 mb-5">
+            {/* Assunto */}
             <div>
               <label className="block text-xs font-dm text-[#8a9e8a] mb-2">Assunto</label>
               <select
@@ -147,7 +151,7 @@ export default function DisciplinaPage() {
               </select>
             </div>
 
-            {/* Difficulty */}
+            {/* Dificuldade */}
             <div>
               <label className="block text-xs font-dm text-[#8a9e8a] mb-2">Dificuldade</label>
               <div className="flex gap-2">
@@ -166,34 +170,32 @@ export default function DisciplinaPage() {
                 ))}
               </div>
             </div>
+          </div>
 
-            {/* Count */}
-            <div>
-              <label className="block text-xs font-dm text-[#8a9e8a] mb-2">Questões</label>
-              <div className="flex gap-2">
-                {COUNT_OPTIONS.map((n) => (
-                  <button
-                    key={n}
-                    onClick={() => setQuestionCount(n)}
-                    className={`flex-1 py-2 rounded-lg text-xs font-dm border transition-colors ${
-                      questionCount === n
-                        ? "bg-[#1D9E75] border-[#1D9E75] text-white"
-                        : "border-[#1e2a1e] border-[0.5px] text-[#8a9e8a] hover:border-[#1D9E75] hover:text-[#e8f0e8]"
-                    }`}
-                  >
-                    {n}
-                  </button>
-                ))}
-              </div>
+          {/* Slider de quantidade */}
+          <div>
+            <div className="flex items-center justify-between mb-2">
+              <label className="text-xs font-dm text-[#8a9e8a]">Quantidade de questões</label>
+              <span className="font-syne font-bold text-lg text-[#1D9E75]">{matchCount > 0 ? questionCount : 0}</span>
+            </div>
+            <input
+              type="range"
+              min={1}
+              max={sliderMax}
+              value={matchCount > 0 ? questionCount : 1}
+              onChange={(e) => setQuestionCount(parseInt(e.target.value))}
+              disabled={matchCount === 0}
+              className="w-full accent-[#1D9E75] cursor-pointer disabled:opacity-40 disabled:cursor-not-allowed"
+            />
+            <div className="flex justify-between mt-1 text-xs font-dm text-[#4a5a4a]">
+              <span>1</span>
+              <span>{sliderMax}</span>
             </div>
           </div>
 
-          <p className="mt-5 text-xs font-dm text-[#8a9e8a]">
+          <p className="mt-4 text-xs font-dm text-[#8a9e8a]">
             <span className="text-[#1D9E75] font-semibold">{matchCount}</span>{" "}
             {matchCount === 1 ? "questão encontrada" : "questões encontradas"}
-            {effectiveCount < questionCount && matchCount > 0 && (
-              <span className="text-[#4a5a4a]"> · serão usadas {effectiveCount}</span>
-            )}
           </p>
         </div>
 
@@ -222,7 +224,11 @@ export default function DisciplinaPage() {
               {g.available ? (
                 <Link
                   href={buildQuizHref()}
-                  className="mt-auto inline-flex items-center justify-center gap-2 bg-[#1D9E75] hover:bg-[#17805e] text-white font-dm font-medium text-sm px-4 py-2.5 rounded-lg transition-colors"
+                  className={`mt-auto inline-flex items-center justify-center gap-2 font-dm font-medium text-sm px-4 py-2.5 rounded-lg transition-colors ${
+                    matchCount === 0
+                      ? "bg-[#1e2a1e] text-[#4a5a4a] pointer-events-none"
+                      : "bg-[#1D9E75] hover:bg-[#17805e] text-white"
+                  }`}
                 >
                   Iniciar →
                 </Link>
