@@ -44,25 +44,7 @@ export default function Home() {
   return (
     <main className="min-h-screen bg-[#0a0f0a] text-[#e8f0e8]">
       {/* ── Nav ── */}
-      <Nav
-        wide
-        right={
-          <>
-            <Link
-              href="/cadastro"
-              className="text-sm font-dm text-[#8a9e8a] hover:text-[#e8f0e8] transition-colors border border-[#1e2a1e] border-[0.5px] px-4 py-2 rounded-lg hover:border-[#1D9E75]"
-            >
-              Criar conta
-            </Link>
-            <Link
-              href="/jogos"
-              className="text-sm font-dm font-medium bg-[#1D9E75] hover:bg-[#17805e] text-white px-4 py-2 rounded-lg transition-colors"
-            >
-              Começar →
-            </Link>
-          </>
-        }
-      />
+      <Nav wide />
 
       {/* ── Hero ── */}
       <section className="max-w-6xl mx-auto px-4 sm:px-6 pt-12 sm:pt-20 pb-12 sm:pb-20">
