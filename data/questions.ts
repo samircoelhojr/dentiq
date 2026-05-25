@@ -2321,9 +2321,10 @@ export function getTopics(subject: Subject): string[] {
   const topics = new Set(
     questions.filter((q) => q.subject === subject).map((q) => q.topic)
   );
-  return Array.from(topics).sort();
+  return Array.from(topics).sort((a, b) => a.localeCompare(b, "pt-BR"));
 }
 
+// Omitting a filter key means "match all". Empty string is treated as omitted.
 export function filterQuestions(opts: {
   subject?: Subject;
   topic?: string;
@@ -2331,7 +2332,7 @@ export function filterQuestions(opts: {
 }): Question[] {
   return questions.filter((q) => {
     if (opts.subject && q.subject !== opts.subject) return false;
-    if (opts.topic && q.topic !== opts.topic) return false;
+    if (opts.topic?.trim() && q.topic !== opts.topic) return false;
     if (opts.difficulty && q.difficulty !== opts.difficulty) return false;
     return true;
   });

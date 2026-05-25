@@ -10,7 +10,12 @@ import type { Question, Subject, Difficulty } from "@/data/questions";
 type GameState = "playing" | "answered" | "finished";
 
 function shuffle<T>(arr: T[]): T[] {
-  return [...arr].sort(() => Math.random() - 0.5);
+  const a = [...arr];
+  for (let i = a.length - 1; i > 0; i--) {
+    const j = Math.floor(Math.random() * (i + 1));
+    [a[i], a[j]] = [a[j], a[i]];
+  }
+  return a;
 }
 
 function shuffleOptions(q: Question): Question {
@@ -31,7 +36,8 @@ function QuizGame() {
   const topic = searchParams.get("topic");
   const difficulty = searchParams.get("difficulty") as Difficulty | null;
   const countParam = searchParams.get("count");
-  const questionLimit = countParam ? Math.max(1, parseInt(countParam, 10)) : 10;
+  const parsedCount = parseInt(countParam ?? "", 10);
+  const questionLimit = !isNaN(parsedCount) ? Math.max(1, parsedCount) : 10;
 
   const [questions, setQuestions] = useState<Question[]>([]);
   const [currentIndex, setCurrentIndex] = useState(0);
