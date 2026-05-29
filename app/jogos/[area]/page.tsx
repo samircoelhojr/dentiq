@@ -38,38 +38,53 @@ export default function AreaPage() {
           Disciplinas
         </h2>
 
-        <div className="grid sm:grid-cols-2 lg:grid-cols-3 gap-3">
-          {area.disciplinas.map((d) => {
-            const hasContent = !!d.subject;
-            if (hasContent) {
-              return (
-                <Link
-                  key={d.id}
-                  href={`/jogos/${areaId}/${d.id}`}
-                  className="group border border-[#1e2a1e] border-[0.5px] rounded-xl bg-[#111611] px-5 py-4 flex items-center justify-between hover:border-[#1D9E75] transition-colors"
-                >
-                  <span className="font-dm text-sm text-[#e8f0e8] group-hover:text-[#1D9E75] transition-colors">
-                    {d.label}
-                  </span>
-                  <span className="text-[#1D9E75] text-sm opacity-0 group-hover:opacity-100 transition-opacity shrink-0 ml-3">
-                    →
-                  </span>
-                </Link>
-              );
-            }
-            return (
-              <div
-                key={d.id}
-                className="border border-[#1e2a1e] border-[0.5px] rounded-xl bg-[#111611] px-5 py-4 flex items-center justify-between opacity-40"
-              >
-                <span className="font-dm text-sm text-[#8a9e8a]">{d.label}</span>
-                <span className="text-xs font-dm text-[#4a5a4a] border border-[#1e2a1e] border-[0.5px] rounded-full px-2 py-0.5 shrink-0 ml-3">
-                  Em breve
-                </span>
-              </div>
-            );
-          })}
-        </div>
+        {(() => {
+          const available = area.disciplinas.filter((d) => !!d.subject || !!d.gameHref);
+          const comingSoon = area.disciplinas.filter((d) => !d.subject && !d.gameHref);
+          return (
+            <>
+              {available.length > 0 && (
+                <div className="grid sm:grid-cols-2 lg:grid-cols-3 gap-3 mb-8">
+                  {available.map((d) => (
+                    <Link
+                      key={d.id}
+                      href={d.gameHref ?? `/jogos/${areaId}/${d.id}`}
+                      className="group border border-[#1e2a1e] border-[0.5px] rounded-xl bg-[#111611] px-5 py-4 flex items-center justify-between hover:border-[#1D9E75] transition-colors"
+                    >
+                      <span className="font-dm text-sm text-[#e8f0e8] group-hover:text-[#1D9E75] transition-colors">
+                        {d.label}
+                      </span>
+                      <span className="text-[#1D9E75] text-sm opacity-0 group-hover:opacity-100 transition-opacity shrink-0 ml-3">
+                        →
+                      </span>
+                    </Link>
+                  ))}
+                </div>
+              )}
+
+              {comingSoon.length > 0 && (
+                <>
+                  <p className="font-syne font-semibold text-xs text-[#4a5a4a] uppercase tracking-wider mb-3">
+                    Em breve
+                  </p>
+                  <div className="grid sm:grid-cols-2 lg:grid-cols-3 gap-3">
+                    {comingSoon.map((d) => (
+                      <div
+                        key={d.id}
+                        className="border border-[#1e2a1e] border-[0.5px] rounded-xl bg-[#111611] px-5 py-4 flex items-center justify-between opacity-40"
+                      >
+                        <span className="font-dm text-sm text-[#8a9e8a]">{d.label}</span>
+                        <span className="text-xs font-dm text-[#4a5a4a] border border-[#1e2a1e] border-[0.5px] rounded-full px-2 py-0.5 shrink-0 ml-3">
+                          Em breve
+                        </span>
+                      </div>
+                    ))}
+                  </div>
+                </>
+              )}
+            </>
+          );
+        })()}
 
         <div className="mt-8">
           <Link

@@ -5,7 +5,8 @@ import Link from "next/link";
 import { useParams } from "next/navigation";
 import Nav from "../../../components/Nav";
 import { getArea, getDisciplina } from "@/data/areas";
-import { getTopics, filterQuestions, difficulties } from "@/data/questions";
+import { difficulties } from "@/data/questions";
+import { fetchTopics, fetchQuestionCount } from "@/lib/questions-db";
 import type { Subject, Difficulty } from "@/data/questions";
 
 const gameModes = [
@@ -45,16 +46,31 @@ export default function DisciplinaPage() {
   const [selectedDifficulty, setSelectedDifficulty] = useState<Difficulty | "Todas">("Todas");
   const [questionCount, setQuestionCount] = useState(10);
 
-  // Compute derived values before early returns (safe with optional chaining)
+  // Async state fetched from Supabase
+  const [topics, setTopics] = useState<string[]>([]);
+  const [matchCount, setMatchCount] = useState(0);
+  const [countLoading, setCountLoading] = useState(true);
+
   const subject = disciplina?.subject as Subject | undefined;
-  const topics = subject ? getTopics(subject) : [];
-  const matchCount = subject
-    ? filterQuestions({
-        subject,
-        topic: selectedTopic !== "Todos" ? selectedTopic : undefined,
-        difficulty: selectedDifficulty !== "Todas" ? selectedDifficulty : undefined,
-      }).length
-    : 0;
+
+  // Fetch topics when the subject is known
+  useEffect(() => {
+    if (!subject) return;
+    fetchTopics(subject).then(setTopics).catch(() => {});
+  }, [subject]);
+
+  // Fetch question count whenever filters change
+  useEffect(() => {
+    if (!subject) return;
+    setCountLoading(true);
+    fetchQuestionCount({
+      subject,
+      topic: selectedTopic !== "Todos" ? selectedTopic : undefined,
+      difficulty: selectedDifficulty !== "Todas" ? selectedDifficulty : undefined,
+    })
+      .then((n) => { setMatchCount(n); setCountLoading(false); })
+      .catch(() => { setCountLoading(false); });
+  }, [subject, selectedTopic, selectedDifficulty]);
 
   // Clamp slider when filters reduce available questions
   useEffect(() => {
@@ -176,26 +192,40 @@ export default function DisciplinaPage() {
           <div>
             <div className="flex items-center justify-between mb-2">
               <label className="text-xs font-dm text-[#8a9e8a]">Quantidade de questões</label>
-              <span className="font-syne font-bold text-lg text-[#1D9E75]">{matchCount > 0 ? questionCount : 0}</span>
+              {countLoading ? (
+                <div className="h-5 w-8 bg-[#1e2a1e] rounded animate-pulse" />
+              ) : (
+                <span className="font-syne font-bold text-lg text-[#1D9E75]">{matchCount > 0 ? questionCount : 0}</span>
+              )}
             </div>
-            <input
-              type="range"
-              min={1}
-              max={sliderMax}
-              value={matchCount > 0 ? questionCount : 1}
-              onChange={(e) => setQuestionCount(parseInt(e.target.value))}
-              disabled={matchCount === 0}
-              className="w-full accent-[#1D9E75] cursor-pointer disabled:opacity-40 disabled:cursor-not-allowed"
-            />
+            {countLoading ? (
+              <div className="h-2 w-full bg-[#1e2a1e] rounded-full animate-pulse" />
+            ) : (
+              <input
+                type="range"
+                min={1}
+                max={sliderMax}
+                value={matchCount > 0 ? questionCount : 1}
+                onChange={(e) => setQuestionCount(parseInt(e.target.value))}
+                disabled={matchCount === 0}
+                className="w-full accent-[#1D9E75] cursor-pointer disabled:opacity-40 disabled:cursor-not-allowed"
+              />
+            )}
             <div className="flex justify-between mt-1 text-xs font-dm text-[#4a5a4a]">
               <span>1</span>
-              <span>{sliderMax}</span>
+              {!countLoading && <span>{sliderMax}</span>}
             </div>
           </div>
 
           <p className="mt-4 text-xs font-dm text-[#8a9e8a]">
-            <span className="text-[#1D9E75] font-semibold">{matchCount}</span>{" "}
-            {matchCount === 1 ? "questão encontrada" : "questões encontradas"}
+            {countLoading ? (
+              <span className="inline-block h-4 w-32 bg-[#1e2a1e] rounded animate-pulse" />
+            ) : (
+              <>
+                <span className="text-[#1D9E75] font-semibold">{matchCount}</span>{" "}
+                {matchCount === 1 ? "questão encontrada" : "questões encontradas"}
+              </>
+            )}
           </p>
         </div>
 

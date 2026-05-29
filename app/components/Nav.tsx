@@ -10,11 +10,13 @@ interface NavProps {
   breadcrumbs?: { label: string; href?: string }[];
   wide?: boolean;
   right?: React.ReactNode;
+  exitHref?: string;
 }
 
-export default function Nav({ breadcrumbs, wide = false, right }: NavProps) {
+export default function Nav({ breadcrumbs, wide = false, right, exitHref }: NavProps) {
   const router = useRouter();
   const [user, setUser] = useState<User | null>(null);
+  const [avatarUrl, setAvatarUrl] = useState<string | null>(null);
   const [menuOpen, setMenuOpen] = useState(false);
   const maxW = wide ? "max-w-6xl" : "max-w-3xl";
 
@@ -31,6 +33,25 @@ export default function Nav({ breadcrumbs, wide = false, right }: NavProps) {
 
     return () => subscription.unsubscribe();
   }, []);
+
+  useEffect(() => {
+    if (!user) {
+      setAvatarUrl(null);
+      return;
+    }
+    let active = true;
+    supabase
+      .from("profiles")
+      .select("avatar_url")
+      .eq("id", user.id)
+      .single()
+      .then(({ data }) => {
+        if (active) setAvatarUrl(data?.avatar_url ?? null);
+      });
+    return () => {
+      active = false;
+    };
+  }, [user]);
 
   async function handleSignOut() {
     await supabase.auth.signOut();
@@ -53,9 +74,14 @@ export default function Nav({ breadcrumbs, wide = false, right }: NavProps) {
     <div className="relative">
       <button
         onClick={() => setMenuOpen((o) => !o)}
-        className="flex items-center justify-center w-8 h-8 rounded-full bg-[#1D9E75] text-white text-xs font-syne font-bold hover:bg-[#17805e] transition-colors"
+        className="flex items-center justify-center w-8 h-8 rounded-full overflow-hidden bg-[#1D9E75] text-white text-xs font-syne font-bold hover:opacity-90 transition-opacity"
       >
-        {getInitials(user)}
+        {avatarUrl ? (
+          // eslint-disable-next-line @next/next/no-img-element
+          <img src={avatarUrl} alt="Avatar" className="w-full h-full object-cover" />
+        ) : (
+          getInitials(user)
+        )}
       </button>
       {menuOpen && (
         <>
@@ -137,6 +163,14 @@ export default function Nav({ breadcrumbs, wide = false, right }: NavProps) {
         </div>
 
         <div className="flex items-center gap-2 sm:gap-3 flex-wrap justify-end shrink-0">
+          {exitHref && (
+            <Link
+              href={exitHref}
+              className="text-xs font-dm text-[#8a9e8a] hover:text-[#e8f0e8] transition-colors border border-[#1e2a1e] border-[0.5px] px-3 py-1.5 rounded-lg hover:border-[#1D9E75]"
+            >
+              ← Sair
+            </Link>
+          )}
           {right ?? defaultRight}
         </div>
       </div>

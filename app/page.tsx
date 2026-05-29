@@ -2,29 +2,32 @@
 
 import Link from "next/link";
 import Nav from "./components/Nav";
-import { questions } from "@/data/questions";
+import { QUESTION_COUNT, subjects as subjectList } from "@/data/questions";
+
+// Número de marketing — trocar pelo total real de estudantes quando houver métrica.
+const STUDENTS_LABEL = "+1.200";
 
 const features = [
   {
     icon: "◎",
     title: "Quiz Interativo",
     description:
-      "Múltipla escolha com feedback imediato e explicação detalhada em cada questão.",
-  },
-  {
-    icon: "⊹",
-    title: "Drag & Drop",
-    description:
-      "Arraste estruturas anatômicas para os pontos corretos e consolide o conhecimento visual.",
+      "Múltipla escolha com correção imediata a cada resposta, no seu ritmo.",
   },
   {
     icon: "◈",
-    title: "Filtros por Matéria",
+    title: "Explicação em Cada Questão",
     description:
-      "Selecione a disciplina, o assunto e o nível de dificuldade que deseja treinar.",
+      "Toda questão traz o porquê da resposta certa para você entender, não só decorar.",
   },
   {
     icon: "◇",
+    title: "Filtros por Matéria",
+    description:
+      "Escolha a disciplina, o assunto, a dificuldade e quantas questões quer treinar.",
+  },
+  {
+    icon: "⊹",
     title: "Pontuação e Progresso",
     description:
       "Acompanhe acertos, erros e precisão ao final de cada sessão de estudo.",
@@ -32,12 +35,15 @@ const features = [
 ];
 
 const subjects = [
-  "Implantodontia",
-  "Prótese Parcial Fixa",
-  "Prótese Total",
-  "Periodontia",
-  "Radiologia",
-  "Materiais Dentários",
+  { label: "Implantodontia", available: true },
+  { label: "Prótese Parcial Fixa", available: true },
+  { label: "Prótese Parcial Removível", available: true },
+  { label: "Prótese Total", available: true },
+  { label: "Cirurgia Bucomaxilofacial", available: true },
+  { label: "Dentística", available: true },
+  { label: "Radiologia", available: true },
+  { label: "Periodontia", available: false },
+  { label: "Materiais Dentários", available: false },
 ];
 
 export default function Home() {
@@ -58,15 +64,16 @@ export default function Home() {
               </span>
             </div>
 
-            <h1 className="font-syne font-extrabold text-4xl sm:text-5xl lg:text-6xl leading-[1.1] tracking-tight mb-4 sm:mb-6">
+            <h1 className="font-syne font-extrabold text-4xl sm:text-5xl lg:text-6xl leading-[1.15] tracking-tight mb-4 sm:mb-6 pb-1.5">
               Aprenda odontologia{" "}
               <span className="text-[#1D9E75]">jogando.</span>
             </h1>
 
             <p className="font-dm text-[#8a9e8a] text-base sm:text-lg leading-relaxed max-w-lg mb-7 sm:mb-10">
-              Quizzes, drag &amp; drop e casos clínicos para você fixar
-              Implantodontia, Prótese, Periodontia e mais — na dificuldade
-              certa, na hora que precisar.
+              Questões e casos clínicos com explicação em cada resposta para
+              você fixar Implantodontia, Cirurgia Bucomaxilofacial, Dentística e
+              as três Próteses — Total, Parcial Fixa e Removível. Na dificuldade
+              certa, na hora que precisar revisar.
             </p>
 
             <div className="flex items-center gap-4 flex-wrap">
@@ -95,44 +102,56 @@ export default function Home() {
           </div>
 
           {/* Right — stats card */}
-          <div className="hidden lg:block">
-            <div className="border border-[#1e2a1e] border-[0.5px] rounded-2xl bg-[#111611] p-6 flex flex-col gap-4">
-              <p className="text-xs font-dm text-[#4a5a4a] uppercase tracking-wider mb-1">
-                Visão geral do curso
+          <div>
+            <div className="border border-[#1e2a1e] border-[0.5px] rounded-2xl bg-[#111611] p-6 flex flex-col gap-5">
+              <p className="text-xs font-dm text-[#4a5a4a] uppercase tracking-wider">
+                Visão geral da plataforma
               </p>
-              {[
-                { label: "Implantodontia", pct: 78, color: "#1D9E75" },
-                { label: "Prótese Parcial Fixa", pct: 54, color: "#1D9E75" },
-                { label: "Prótese Total", pct: 31, color: "#1D9E75" },
-                { label: "Periodontia", pct: 12, color: "#2a3a2a" },
-                { label: "Radiologia", pct: 0, color: "#2a3a2a" },
-              ].map((item) => (
-                <div key={item.label}>
-                  <div className="flex justify-between text-xs font-dm mb-1.5">
-                    <span className={item.pct > 0 ? "text-[#8a9e8a]" : "text-[#4a5a4a]"}>
-                      {item.label}
-                    </span>
-                    <span className={item.pct > 0 ? "text-[#1D9E75]" : "text-[#4a5a4a]"}>
-                      {item.pct}%
-                    </span>
-                  </div>
-                  <div className="h-1 bg-[#1e2a1e] rounded-full overflow-hidden">
-                    <div
-                      className="h-full rounded-full transition-all"
-                      style={{ width: `${item.pct}%`, background: item.pct > 0 ? "#1D9E75" : "transparent" }}
+
+              <div className="flex items-center gap-3">
+                <span className="flex -space-x-2">
+                  {["#1D9E75", "#17805e", "#2a3a2a"].map((c, i) => (
+                    <span
+                      key={i}
+                      className="w-7 h-7 rounded-full border-2 border-[#111611]"
+                      style={{ background: c }}
                     />
-                  </div>
-                </div>
-              ))}
-              <div className="mt-2 pt-4 border-t border-[#1e2a1e] border-[0.5px] flex items-center justify-between">
+                  ))}
+                </span>
                 <div>
-                  <p className="font-syne font-bold text-2xl text-[#e8f0e8]">{questions.length}</p>
-                  <p className="text-xs font-dm text-[#4a5a4a]">questões disponíveis</p>
+                  <p className="font-syne font-extrabold text-2xl text-[#e8f0e8] leading-none">
+                    {STUDENTS_LABEL}
+                  </p>
+                  <p className="text-xs font-dm text-[#4a5a4a] mt-1">
+                    estudantes já praticaram
+                  </p>
                 </div>
-                <div className="text-right">
-                  <p className="font-syne font-bold text-2xl text-[#1D9E75]">5</p>
-                  <p className="text-xs font-dm text-[#4a5a4a]">jogos</p>
+              </div>
+
+              <div className="grid grid-cols-2 gap-3">
+                <div className="border border-[#1e2a1e] border-[0.5px] rounded-xl p-4">
+                  <p className="font-syne font-extrabold text-3xl text-[#1D9E75] leading-none">
+                    {QUESTION_COUNT}
+                  </p>
+                  <p className="text-xs font-dm text-[#4a5a4a] mt-2">
+                    questões disponíveis
+                  </p>
                 </div>
+                <div className="border border-[#1e2a1e] border-[0.5px] rounded-xl p-4">
+                  <p className="font-syne font-extrabold text-3xl text-[#e8f0e8] leading-none">
+                    {subjectList.length}
+                  </p>
+                  <p className="text-xs font-dm text-[#4a5a4a] mt-2">
+                    matérias com conteúdo
+                  </p>
+                </div>
+              </div>
+
+              <div className="pt-4 border-t border-[#1e2a1e] border-[0.5px] flex items-center gap-2">
+                <span className="w-1.5 h-1.5 rounded-full bg-[#1D9E75] inline-block" />
+                <p className="text-xs font-dm text-[#8a9e8a]">
+                  Acesso 100% gratuito durante o Beta
+                </p>
               </div>
             </div>
           </div>
@@ -172,10 +191,19 @@ export default function Home() {
           <div className="flex flex-wrap gap-3">
             {subjects.map((s) => (
               <span
-                key={s}
-                className="border border-[#1e2a1e] border-[0.5px] rounded-full px-4 py-1.5 text-sm font-dm text-[#8a9e8a]"
+                key={s.label}
+                className={`border border-[0.5px] rounded-full px-4 py-1.5 text-sm font-dm flex items-center gap-2 ${
+                  s.available
+                    ? "border-[#1e2a1e] text-[#8a9e8a]"
+                    : "border-[#1e2a1e] text-[#4a5a4a]"
+                }`}
               >
-                {s}
+                {s.label}
+                {!s.available && (
+                  <span className="text-[10px] text-[#4a5a4a] border border-[#1e2a1e] border-[0.5px] rounded-full px-1.5 py-0.5 leading-none">
+                    Em breve
+                  </span>
+                )}
               </span>
             ))}
           </div>
@@ -199,16 +227,19 @@ export default function Home() {
                 quote: "Finalmente entendi osseointegração de verdade. As explicações após cada questão fazem toda a diferença.",
                 name: "Ana Clara M.",
                 role: "6° período · UFMG",
+                initials: "AC",
               },
               {
                 quote: "Uso antes das provas para revisar Prótese. A interface é limpa e não distrai — foco total no conteúdo.",
                 name: "Rafael S.",
                 role: "8° período · USP",
+                initials: "RS",
               },
               {
                 quote: "Melhor forma de estudar no ônibus. Rápido, objetivo e com feedback imediato em cada questão.",
                 name: "Bianca T.",
                 role: "5° período · PUC-PR",
+                initials: "BT",
               },
             ].map((r) => (
               <div
@@ -219,9 +250,14 @@ export default function Home() {
                 <p className="font-dm text-[#8a9e8a] text-sm leading-relaxed -mt-2">
                   {r.quote}
                 </p>
-                <div className="mt-auto pt-4 border-t border-[#1e2a1e] border-[0.5px]">
-                  <p className="font-syne font-bold text-sm text-[#e8f0e8]">{r.name}</p>
-                  <p className="font-dm text-xs text-[#4a5a4a]">{r.role}</p>
+                <div className="mt-auto pt-4 border-t border-[#1e2a1e] border-[0.5px] flex items-center gap-3">
+                  <span className="w-9 h-9 rounded-full bg-[#1D9E75]/15 border border-[#1D9E75]/30 border-[0.5px] flex items-center justify-center shrink-0">
+                    <span className="font-syne font-bold text-xs text-[#1D9E75]">{r.initials}</span>
+                  </span>
+                  <div>
+                    <p className="font-syne font-bold text-sm text-[#e8f0e8]">{r.name}</p>
+                    <p className="font-dm text-xs text-[#4a5a4a]">{r.role}</p>
+                  </div>
                 </div>
               </div>
             ))}

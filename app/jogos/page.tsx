@@ -17,21 +17,23 @@ export default function JogosPage() {
 
         <div className="grid sm:grid-cols-2 gap-4">
           {areas.map((area) => {
-            const availableCount = area.disciplinas.filter((d) => d.subject).length;
-            return (
-              <Link
-                key={area.id}
-                href={`/jogos/${area.id}`}
-                className="group border border-[#1e2a1e] border-[0.5px] rounded-xl bg-[#111611] p-6 flex flex-col gap-4 hover:border-[#1D9E75] transition-colors"
-              >
+            const availableCount = area.disciplinas.filter((d) => d.subject || d.gameHref).length;
+            const hasContent = availableCount > 0;
+            const cardClass = `group border border-[#1e2a1e] border-[0.5px] rounded-xl bg-[#111611] p-6 flex flex-col gap-4 ${
+              hasContent
+                ? "hover:border-[#1D9E75] transition-colors cursor-pointer"
+                : "opacity-50 cursor-not-allowed"
+            }`;
+            const inner = (
+              <>
                 <div className="flex items-start justify-between">
-                  <span className="text-[#1D9E75] text-2xl">{area.icon}</span>
+                  <span className={`text-2xl ${hasContent ? "text-[#1D9E75]" : "text-[#4a5a4a]"}`}>{area.icon}</span>
                   <span className="text-xs font-dm text-[#4a5a4a]">
                     {area.disciplinas.length} disciplinas
                   </span>
                 </div>
                 <div>
-                  <h3 className="font-syne font-bold text-lg mb-1 group-hover:text-[#1D9E75] transition-colors">
+                  <h3 className={`font-syne font-bold text-lg mb-1 transition-colors ${hasContent ? "group-hover:text-[#1D9E75]" : ""}`}>
                     {area.label}
                   </h3>
                   <p className="font-dm text-[#8a9e8a] text-sm leading-relaxed">
@@ -40,7 +42,7 @@ export default function JogosPage() {
                 </div>
                 <div className="flex items-center justify-between mt-auto pt-4 border-t border-[#1e2a1e] border-[0.5px]">
                   <span className="text-xs font-dm text-[#4a5a4a]">
-                    {availableCount > 0 ? (
+                    {hasContent ? (
                       <span>
                         <span className="text-[#1D9E75]">{availableCount}</span> com questões disponíveis
                       </span>
@@ -48,11 +50,22 @@ export default function JogosPage() {
                       "Em breve"
                     )}
                   </span>
-                  <span className="text-xs font-dm text-[#1D9E75] opacity-0 group-hover:opacity-100 transition-opacity">
-                    Explorar →
-                  </span>
+                  {hasContent && (
+                    <span className="text-xs font-dm text-[#1D9E75] opacity-0 group-hover:opacity-100 transition-opacity">
+                      Explorar →
+                    </span>
+                  )}
                 </div>
+              </>
+            );
+            return hasContent ? (
+              <Link key={area.id} href={`/jogos/${area.id}`} className={cardClass}>
+                {inner}
               </Link>
+            ) : (
+              <div key={area.id} className={cardClass}>
+                {inner}
+              </div>
             );
           })}
         </div>
